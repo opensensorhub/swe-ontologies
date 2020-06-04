@@ -1,0 +1,84 @@
+@prefix : <http://sensorml.com/ont/system_types/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://sensorml.com/ont/core/system> .
+
+<http://sensorml.com/ont/core/system> rdf:type owl:Ontology ;
+                                       owl:imports <http://www.w3.org/ns/ssn/systems/> ;
+                                       <http://purl.org/dc/terms/creator> "Alex Robin" ;
+                                       rdfs:comment "Ontology of generic system and component types" ;
+                                       rdfs:label "SensorWeb System Types Ontology" ;
+                                       owl:versionInfo 1.0 .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sensorml.com/ont/core/system/ComputerModel
+<http://sensorml.com/ont/core/system/ComputerModel> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> """A computer model (or computer simulation) is designed to predict the behaviour or the outcome of a real-world or physical system. In the context of Sensor Web, it can also be seen as a type of (virtual) Sensor that estimates or forecasts the value of observed properties using some kind of software algorithm.
+
+A computer model often takes real-world measurements as inputs and processes them further by applying a mathematical model such as the equations of various fields of physics. As such, it also a kind of DataProcessor.
+
+Example of computer models are weather forecast models, flood models, Kalman filters, etc.""" .
+
+
+###  http://sensorml.com/ont/core/system/DataProcessor
+<http://sensorml.com/ont/core/system/DataProcessor> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3.org/ns/ssn/System> ;
+                                                    rdfs:seeAlso <https://en.wikipedia.org/wiki/Information_processor> ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "A system component used to process digital data, such as an on-board computer." .
+
+
+###  http://sensorml.com/ont/core/system/DataTransmitter
+<http://sensorml.com/ont/core/system/DataTransmitter> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.w3.org/ns/ssn/System> ;
+                                                      rdfs:seeAlso <https://en.wikipedia.org/wiki/Data_transmission> ;
+                                                      <http://www.w3.org/2004/02/skos/core#definition> """A System component used to transmit and receive data over a point-to-point or point-to-multipoint communication channel.
+
+In the context of the Sensor Web, its most relevant use is to transmit observation data produced by the System's Sensors and receive command data targeted at the System's Actuators.""" .
+
+
+###  http://sensorml.com/ont/core/system/Detector
+<http://sensorml.com/ont/core/system/Detector> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "A Detector is an atomic sensing element (often analog) that is sensitive to a single observable property. It is a fundamental part of any Sensor." .
+
+
+###  http://sensorml.com/ont/core/system/DigitalSensor
+<http://sensorml.com/ont/core/system/DigitalSensor> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "A Digital Sensor is a type of electronic, electro-mechanical or electro-chemical Sensor device composed of one or more Detectors and additional electronics, used jointly to compute and output a digital representation of each observed Property." .
+
+
+###  http://sensorml.com/ont/core/system/HumanSensor
+<http://sensorml.com/ont/core/system/HumanSensor> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+                                                  <http://www.w3.org/2004/02/skos/core#definition> "A human acting as a Sensor, for example in the context of a poll, a survey, an inspection, a review, or by simply reporting stimuli received by its sensory organs." .
+
+
+###  http://sensorml.com/ont/core/system/SensorArray
+<http://sensorml.com/ont/core/system/SensorArray> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://sensorml.com/ont/core/system/SensorSystem> ;
+                                                  <http://www.w3.org/2004/02/skos/core#definition> """A Sensor Array is a group of identical (or almost identical) Sensors that are collectively used to homogeneously observe the same set of properties of one or more Features of Interest.
+
+It is often used to observe a single sampled feature at different sampling locations, in which case the resulting data can often be represented as a coverage.""" .
+
+
+###  http://sensorml.com/ont/core/system/SensorNetwork
+<http://sensorml.com/ont/core/system/SensorNetwork> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://sensorml.com/ont/core/system/SensorSystem> ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "A Sensor Network is a group of spatially dispersed and dedicated Sensors collectively used for measuring properties of one or more Features of Interest and whose data is collected and organized in a common manner." .
+
+
+###  http://sensorml.com/ont/core/system/SensorSystem
+<http://sensorml.com/ont/core/system/SensorSystem> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+                                                   <http://www.w3.org/2004/02/skos/core#definition> "A (measurement) System that itself acts as a Sensor (i.e. has its own outputs) and composed of one or more Sensor and DataProcessor components." .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

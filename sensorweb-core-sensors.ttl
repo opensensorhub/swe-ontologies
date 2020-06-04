@@ -1,0 +1,365 @@
+@prefix : <http://sensorml.com/ont/sensor/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://sensorml.com/ont/sensor> .
+
+<http://sensorml.com/ont/sensor> rdf:type owl:Ontology ;
+                                  owl:imports <http://www.w3.org/ns/ssn/systems/> ;
+                                  <http://purl.org/dc/terms/creator> "Alex Robin" ;
+                                  rdfs:label "SensorWeb Sensor Types Ontology" ;
+                                  owl:versionInfo 1.0 .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sensorml.com/ont/sensor/Accelerometer
+:Accelerometer rdf:type owl:Class ;
+               rdfs:subClassOf :Motion .
+
+
+###  http://sensorml.com/ont/sensor/Acoustic
+:Acoustic rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/Actinometer
+:Actinometer rdf:type owl:Class ;
+             rdfs:subClassOf :Environmental .
+
+
+###  http://sensorml.com/ont/sensor/AirPolutionSensor
+:AirPolutionSensor rdf:type owl:Class ;
+                   rdfs:subClassOf :Chemical .
+
+
+###  http://sensorml.com/ont/sensor/Altimeter
+:Altimeter rdf:type owl:Class ;
+           rdfs:subClassOf :Location .
+
+
+###  http://sensorml.com/ont/sensor/Barometer
+:Barometer rdf:type owl:Class ;
+           rdfs:subClassOf :Environmental ,
+                           :Fluidic .
+
+
+###  http://sensorml.com/ont/sensor/Biological
+:Biological rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/Bolometer
+:Bolometer rdf:type owl:Class ;
+           rdfs:subClassOf :Thermal .
+
+
+###  http://sensorml.com/ont/sensor/Chemical
+:Chemical rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/ConicalScanner
+:ConicalScanner rdf:type owl:Class ;
+                rdfs:subClassOf :ImageSensor .
+
+
+###  http://sensorml.com/ont/sensor/Contact
+:Contact rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/DopplerRadar
+:DopplerRadar rdf:type owl:Class ;
+              rdfs:subClassOf :ElectroOptical .
+
+
+###  http://sensorml.com/ont/sensor/Dosimeter
+:Dosimeter rdf:type owl:Class ;
+           rdfs:subClassOf :Radiological .
+
+
+###  http://sensorml.com/ont/sensor/ElectroOptical
+:ElectroOptical rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/Environmental
+:Environmental rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/FlowSensor
+:FlowSensor rdf:type owl:Class ;
+            rdfs:subClassOf :Fluidic .
+
+
+###  http://sensorml.com/ont/sensor/Fluidic
+:Fluidic rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/Force
+:Force rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/ForceSensor
+:ForceSensor rdf:type owl:Class ;
+             rdfs:subClassOf :Force .
+
+
+###  http://sensorml.com/ont/sensor/FrameCamera
+:FrameCamera rdf:type owl:Class ;
+             rdfs:subClassOf :ImageSensor .
+
+
+###  http://sensorml.com/ont/sensor/GLONASS
+:GLONASS rdf:type owl:Class ;
+         rdfs:subClassOf :GNSS .
+
+
+###  http://sensorml.com/ont/sensor/GNSS
+:GNSS rdf:type owl:Class ;
+      rdfs:subClassOf :Location .
+
+
+###  http://sensorml.com/ont/sensor/GPS
+:GPS rdf:type owl:Class ;
+     rdfs:subClassOf :GNSS .
+
+
+###  http://sensorml.com/ont/sensor/Galileo
+:Galileo rdf:type owl:Class ;
+         rdfs:subClassOf :GNSS .
+
+
+###  http://sensorml.com/ont/sensor/Geophone
+:Geophone rdf:type owl:Class ;
+          rdfs:subClassOf :Geophysical .
+
+
+###  http://sensorml.com/ont/sensor/Geophysical
+:Geophysical rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/Gyrometer
+:Gyrometer rdf:type owl:Class ;
+           rdfs:subClassOf :Motion .
+
+
+###  http://sensorml.com/ont/sensor/Health
+:Health rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/HeartbeatSensor
+:HeartbeatSensor rdf:type owl:Class ;
+                 rdfs:subClassOf :Health .
+
+
+###  http://sensorml.com/ont/sensor/Humidity
+:Humidity rdf:type owl:Class .
+
+
+###  http://sensorml.com/ont/sensor/Hydrophone
+:Hydrophone rdf:type owl:Class ;
+            rdfs:subClassOf :Acoustic .
+
+
+###  http://sensorml.com/ont/sensor/Hygrometer
+:Hygrometer rdf:type owl:Class ;
+            rdfs:subClassOf :Environmental .
+
+
+###  http://sensorml.com/ont/sensor/IMU
+:IMU rdf:type owl:Class ;
+     rdfs:subClassOf :Motion ;
+     rdfs:label "Inertial Measurement Unit" .
+
+
+###  http://sensorml.com/ont/sensor/INS
+:INS rdf:type owl:Class ;
+     rdfs:subClassOf :Motion ;
+     rdfs:label "Inertial Navigation System" .
+
+
+###  http://sensorml.com/ont/sensor/ImageSensor
+:ImageSensor rdf:type owl:Class ;
+             rdfs:subClassOf :ElectroOptical .
+
+
+###  http://sensorml.com/ont/sensor/Inclinometer
+:Inclinometer rdf:type owl:Class ;
+              rdfs:subClassOf :Orientation .
+
+
+###  http://sensorml.com/ont/sensor/LIDAR
+:LIDAR rdf:type owl:Class ;
+       rdfs:subClassOf :ElectroOptical .
+
+
+###  http://sensorml.com/ont/sensor/LaserRangefinder
+:LaserRangefinder rdf:type owl:Class ;
+                  rdfs:subClassOf :Navigation .
+
+
+###  http://sensorml.com/ont/sensor/Location
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf :Navigation .
+
+
+###  http://sensorml.com/ont/sensor/Magnetometer
+:Magnetometer rdf:type owl:Class ;
+              rdfs:subClassOf :Orientation .
+
+
+###  http://sensorml.com/ont/sensor/Microphone
+:Microphone rdf:type owl:Class ;
+            rdfs:subClassOf :Acoustic .
+
+
+###  http://sensorml.com/ont/sensor/Motion
+:Motion rdf:type owl:Class ;
+        rdfs:subClassOf :Navigation .
+
+
+###  http://sensorml.com/ont/sensor/MotionDetector
+:MotionDetector rdf:type owl:Class ;
+                rdfs:subClassOf :Proximity .
+
+
+###  http://sensorml.com/ont/sensor/Navigation
+:Navigation rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/Nuclear
+:Nuclear rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/Odometer
+:Odometer rdf:type owl:Class ;
+          rdfs:subClassOf :Motion .
+
+
+###  http://sensorml.com/ont/sensor/Orientation
+:Orientation rdf:type owl:Class ;
+             rdfs:subClassOf :Navigation .
+
+
+###  http://sensorml.com/ont/sensor/PHSensor
+:PHSensor rdf:type owl:Class ;
+          rdfs:subClassOf :Chemical .
+
+
+###  http://sensorml.com/ont/sensor/Piezometer
+:Piezometer rdf:type owl:Class ;
+            rdfs:subClassOf :Fluidic .
+
+
+###  http://sensorml.com/ont/sensor/PresenceSensor
+:PresenceSensor rdf:type owl:Class ;
+                rdfs:subClassOf :Proximity .
+
+
+###  http://sensorml.com/ont/sensor/PressureSensor
+:PressureSensor rdf:type owl:Class ;
+                rdfs:subClassOf :Fluidic .
+
+
+###  http://sensorml.com/ont/sensor/Proximity
+:Proximity rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/ProximitySensor
+:ProximitySensor rdf:type owl:Class ;
+                 rdfs:subClassOf :Proximity .
+
+
+###  http://sensorml.com/ont/sensor/PushbroomScanner
+:PushbroomScanner rdf:type owl:Class ;
+                  rdfs:subClassOf :ImageSensor .
+
+
+###  http://sensorml.com/ont/sensor/Pyrometer
+:Pyrometer rdf:type owl:Class ;
+           rdfs:subClassOf :Thermal .
+
+
+###  http://sensorml.com/ont/sensor/RFDetector
+:RFDetector rdf:type owl:Class ;
+            rdfs:subClassOf :ElectroOptical .
+
+
+###  http://sensorml.com/ont/sensor/Radar
+:Radar rdf:type owl:Class ;
+       rdfs:subClassOf :ElectroOptical .
+
+
+###  http://sensorml.com/ont/sensor/Radiological
+:Radiological rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/RainGauge
+:RainGauge rdf:type owl:Class ;
+           rdfs:subClassOf :Environmental .
+
+
+###  http://sensorml.com/ont/sensor/Seismometer
+:Seismometer rdf:type owl:Class ;
+             rdfs:subClassOf :Geophysical .
+
+
+###  http://sensorml.com/ont/sensor/SmokeDetector
+:SmokeDetector rdf:type owl:Class ;
+               rdfs:subClassOf :Chemical .
+
+
+###  http://sensorml.com/ont/sensor/StrainGauge
+:StrainGauge rdf:type owl:Class ;
+             rdfs:subClassOf :Force .
+
+
+###  http://sensorml.com/ont/sensor/Temperature
+:Temperature rdf:type owl:Class .
+
+
+###  http://sensorml.com/ont/sensor/Thermal
+:Thermal rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://sensorml.com/ont/sensor/ThermalCamera
+:ThermalCamera rdf:type owl:Class ;
+               rdfs:subClassOf :Thermal .
+
+
+###  http://sensorml.com/ont/sensor/Thermometer
+:Thermometer rdf:type owl:Class ;
+             rdfs:subClassOf :Thermal .
+
+
+###  http://sensorml.com/ont/sensor/TorqueSensor
+:TorqueSensor rdf:type owl:Class ;
+              rdfs:subClassOf :Force .
+
+
+###  http://sensorml.com/ont/sensor/Velocimeter
+:Velocimeter rdf:type owl:Class ;
+             rdfs:subClassOf :Motion .
+
+
+###  http://sensorml.com/ont/sensor/WindSensor
+:WindSensor rdf:type owl:Class ;
+            rdfs:subClassOf :Environmental .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

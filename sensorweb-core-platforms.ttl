@@ -1,0 +1,297 @@
+@prefix : <http://sensorml.com/ont/platform/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://sensorml.com/ont/core/platform> .
+
+<http://sensorml.com/ont/core/platform> rdf:type owl:Ontology ;
+                                         owl:imports <http://www.w3.org/ns/ssn/systems/> ;
+                                         <http://purl.org/dc/terms/creator> "Alex Robin" ;
+                                         rdfs:label "SensorWeb Platform Types Ontology" ;
+                                         owl:versionInfo 1.0 .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sensorml.com/ont/core/platform/Aircraft
+<http://sensorml.com/ont/core/platform/Aircraft> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> .
+
+
+###  http://sensorml.com/ont/core/platform/Airliner
+<http://sensorml.com/ont/core/platform/Airliner> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://sensorml.com/ont/core/platform/Airplane> .
+
+
+###  http://sensorml.com/ont/core/platform/Airplane
+<http://sensorml.com/ont/core/platform/Airplane> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://sensorml.com/ont/core/platform/Aircraft> .
+
+
+###  http://sensorml.com/ont/core/platform/Airship
+<http://sensorml.com/ont/core/platform/Airship> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://sensorml.com/ont/core/platform/Aircraft> .
+
+
+###  http://sensorml.com/ont/core/platform/Animal
+<http://sensorml.com/ont/core/platform/Animal> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://sensorml.com/ont/core/platform/LivingThing> .
+
+
+###  http://sensorml.com/ont/core/platform/Balloon
+<http://sensorml.com/ont/core/platform/Balloon> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://sensorml.com/ont/core/platform/Aircraft> .
+
+
+###  http://sensorml.com/ont/core/platform/Barge
+<http://sensorml.com/ont/core/platform/Barge> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://sensorml.com/ont/core/platform/Boat> .
+
+
+###  http://sensorml.com/ont/core/platform/Bicycle
+<http://sensorml.com/ont/core/platform/Bicycle> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://sensorml.com/ont/core/platform/LandVehicle> .
+
+
+###  http://sensorml.com/ont/core/platform/Boat
+<http://sensorml.com/ont/core/platform/Boat> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://sensorml.com/ont/core/platform/Watercraft> .
+
+
+###  http://sensorml.com/ont/core/platform/Building
+<http://sensorml.com/ont/core/platform/Building> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://sensorml.com/ont/core/platform/Station> .
+
+
+###  http://sensorml.com/ont/core/platform/Buoy
+<http://sensorml.com/ont/core/platform/Buoy> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://sensorml.com/ont/core/platform/Watercraft> .
+
+
+###  http://sensorml.com/ont/core/platform/Bus
+<http://sensorml.com/ont/core/platform/Bus> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://sensorml.com/ont/core/platform/MotorVehicle> .
+
+
+###  http://sensorml.com/ont/core/platform/Car
+<http://sensorml.com/ont/core/platform/Car> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://sensorml.com/ont/core/platform/MotorVehicle> .
+
+
+###  http://sensorml.com/ont/core/platform/CargoPlane
+<http://sensorml.com/ont/core/platform/CargoPlane> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://sensorml.com/ont/core/platform/Airplane> .
+
+
+###  http://sensorml.com/ont/core/platform/CargoShip
+<http://sensorml.com/ont/core/platform/CargoShip> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://sensorml.com/ont/core/platform/Ship> .
+
+
+###  http://sensorml.com/ont/core/platform/CruiseShip
+<http://sensorml.com/ont/core/platform/CruiseShip> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://sensorml.com/ont/core/platform/Ship> .
+
+
+###  http://sensorml.com/ont/core/platform/Ferry
+<http://sensorml.com/ont/core/platform/Ferry> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://sensorml.com/ont/core/platform/Boat> .
+
+
+###  http://sensorml.com/ont/core/platform/Glider
+<http://sensorml.com/ont/core/platform/Glider> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://sensorml.com/ont/core/platform/Airplane> .
+
+
+###  http://sensorml.com/ont/core/platform/Helicopter
+<http://sensorml.com/ont/core/platform/Helicopter> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://sensorml.com/ont/core/platform/Aircraft> .
+
+
+###  http://sensorml.com/ont/core/platform/Human
+<http://sensorml.com/ont/core/platform/Human> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://sensorml.com/ont/core/platform/LivingThing> .
+
+
+###  http://sensorml.com/ont/core/platform/LandVehicle
+<http://sensorml.com/ont/core/platform/LandVehicle> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> .
+
+
+###  http://sensorml.com/ont/core/platform/LaunchVehicle
+<http://sensorml.com/ont/core/platform/LaunchVehicle> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://sensorml.com/ont/core/platform/Spacecraft> .
+
+
+###  http://sensorml.com/ont/core/platform/LightAirplane
+<http://sensorml.com/ont/core/platform/LightAirplane> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://sensorml.com/ont/core/platform/Airplane> .
+
+
+###  http://sensorml.com/ont/core/platform/LightTruck
+<http://sensorml.com/ont/core/platform/LightTruck> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://sensorml.com/ont/core/platform/MotorVehicle> .
+
+
+###  http://sensorml.com/ont/core/platform/LivingThing
+<http://sensorml.com/ont/core/platform/LivingThing> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> .
+
+
+###  http://sensorml.com/ont/core/platform/MilitaryShip
+<http://sensorml.com/ont/core/platform/MilitaryShip> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://sensorml.com/ont/core/platform/Ship> .
+
+
+###  http://sensorml.com/ont/core/platform/Mooring
+<http://sensorml.com/ont/core/platform/Mooring> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://sensorml.com/ont/core/platform/Station> .
+
+
+###  http://sensorml.com/ont/core/platform/MotorVehicle
+<http://sensorml.com/ont/core/platform/MotorVehicle> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://sensorml.com/ont/core/platform/LandVehicle> .
+
+
+###  http://sensorml.com/ont/core/platform/Motorboat
+<http://sensorml.com/ont/core/platform/Motorboat> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://sensorml.com/ont/core/platform/Boat> .
+
+
+###  http://sensorml.com/ont/core/platform/Motorcycle
+<http://sensorml.com/ont/core/platform/Motorcycle> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://sensorml.com/ont/core/platform/MotorVehicle> .
+
+
+###  http://sensorml.com/ont/core/platform/OffroadVehicle
+<http://sensorml.com/ont/core/platform/OffroadVehicle> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://sensorml.com/ont/core/platform/MotorVehicle> .
+
+
+###  http://sensorml.com/ont/core/platform/PlanetaryRover
+<http://sensorml.com/ont/core/platform/PlanetaryRover> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://sensorml.com/ont/core/platform/UGV> .
+
+
+###  http://sensorml.com/ont/core/platform/Sailboat
+<http://sensorml.com/ont/core/platform/Sailboat> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://sensorml.com/ont/core/platform/Boat> .
+
+
+###  http://sensorml.com/ont/core/platform/Satellite
+<http://sensorml.com/ont/core/platform/Satellite> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://sensorml.com/ont/core/platform/Spacecraft> .
+
+
+###  http://sensorml.com/ont/core/platform/SeaGlider
+<http://sensorml.com/ont/core/platform/SeaGlider> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://sensorml.com/ont/core/platform/Watercraft> .
+
+
+###  http://sensorml.com/ont/core/platform/Seaplane
+<http://sensorml.com/ont/core/platform/Seaplane> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://sensorml.com/ont/core/platform/Airplane> .
+
+
+###  http://sensorml.com/ont/core/platform/Ship
+<http://sensorml.com/ont/core/platform/Ship> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://sensorml.com/ont/core/platform/Watercraft> ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A vessel capable of traveling over, through, or under water." .
+
+
+###  http://sensorml.com/ont/core/platform/Spacecraft
+<http://sensorml.com/ont/core/platform/Spacecraft> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> .
+
+
+###  http://sensorml.com/ont/core/platform/Spaceprobe
+<http://sensorml.com/ont/core/platform/Spaceprobe> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://sensorml.com/ont/core/platform/Spacecraft> .
+
+
+###  http://sensorml.com/ont/core/platform/Station
+<http://sensorml.com/ont/core/platform/Station> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> .
+
+
+###  http://sensorml.com/ont/core/platform/Submarine
+<http://sensorml.com/ont/core/platform/Submarine> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://sensorml.com/ont/core/platform/Watercraft> .
+
+
+###  http://sensorml.com/ont/core/platform/Tanker
+<http://sensorml.com/ont/core/platform/Tanker> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://sensorml.com/ont/core/platform/Ship> .
+
+
+###  http://sensorml.com/ont/core/platform/TetheredBalloon
+<http://sensorml.com/ont/core/platform/TetheredBalloon> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://sensorml.com/ont/core/platform/Aircraft> .
+
+
+###  http://sensorml.com/ont/core/platform/Trailer
+<http://sensorml.com/ont/core/platform/Trailer> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://sensorml.com/ont/core/platform/LandVehicle> .
+
+
+###  http://sensorml.com/ont/core/platform/Train
+<http://sensorml.com/ont/core/platform/Train> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://sensorml.com/ont/core/platform/LandVehicle> .
+
+
+###  http://sensorml.com/ont/core/platform/Tree
+<http://sensorml.com/ont/core/platform/Tree> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://sensorml.com/ont/core/platform/LivingThing> .
+
+
+###  http://sensorml.com/ont/core/platform/Truck
+<http://sensorml.com/ont/core/platform/Truck> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://sensorml.com/ont/core/platform/MotorVehicle> .
+
+
+###  http://sensorml.com/ont/core/platform/UAV
+<http://sensorml.com/ont/core/platform/UAV> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://sensorml.com/ont/core/platform/Aircraft> ,
+                                                            <http://sensorml.com/ont/core/platform/UnmannedVehicle> ;
+                                            rdfs:label "Unmanned Aerial Vehicle" .
+
+
+###  http://sensorml.com/ont/core/platform/UGV
+<http://sensorml.com/ont/core/platform/UGV> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://sensorml.com/ont/core/platform/LandVehicle> ,
+                                                            <http://sensorml.com/ont/core/platform/UnmannedVehicle> ;
+                                            rdfs:label "Unmanned Ground Vehicle" .
+
+
+###  http://sensorml.com/ont/core/platform/USV
+<http://sensorml.com/ont/core/platform/USV> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://sensorml.com/ont/core/platform/UnmannedVehicle> ;
+                                            rdfs:label "Unmanned Surface Vehicle" .
+
+
+###  http://sensorml.com/ont/core/platform/UUV
+<http://sensorml.com/ont/core/platform/UUV> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://sensorml.com/ont/core/platform/UnmannedVehicle> ,
+                                                            <http://sensorml.com/ont/core/platform/Watercraft> ;
+                                            rdfs:label "Unmanned Underwater Vehicle" .
+
+
+###  http://sensorml.com/ont/core/platform/UnmannedVehicle
+<http://sensorml.com/ont/core/platform/UnmannedVehicle> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> .
+
+
+###  http://sensorml.com/ont/core/platform/WalkingRobot
+<http://sensorml.com/ont/core/platform/WalkingRobot> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://sensorml.com/ont/core/platform/UnmannedVehicle> .
+
+
+###  http://sensorml.com/ont/core/platform/Watercraft
+<http://sensorml.com/ont/core/platform/Watercraft> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

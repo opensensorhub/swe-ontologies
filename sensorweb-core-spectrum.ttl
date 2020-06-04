@@ -1,0 +1,426 @@
+@prefix : <http://sensorml.com/ont/spectrum/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://sensorml.com/ont/core/spectrum> .
+
+<http://sensorml.com/ont/core/spectrum> rdf:type owl:Ontology ;
+                                         <http://purl.org/dc/terms/creator> "Alex Robin" ;
+                                         rdfs:label "SensorWeb Frequency Bands Ontology" ;
+                                         owl:versionInfo 1.0 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sensorml.com/ont/core/spectrum/Acoustic
+<http://sensorml.com/ont/core/spectrum/Acoustic> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://sensorml.com/ont/core/spectrum/FrequencyBand> ;
+                                                 rdfs:seeAlso <https://en.wikipedia.org/wiki/Acoustic_wave> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> """Acoustic waves are a type of energy propagation through a medium by means of adiabatic compression and decompression. Acoustic waves travel with a characteristic acoustic velocity that depends on the medium they're passing through. 
+
+Some examples of acoustic waves are audible sound from a speaker (waves traveling through air at the speed of sound), ground movement from an earthquake (waves traveling through the earth), or ultrasound used for medical imaging (waves traveling through the body).""" .
+
+
+###  http://sensorml.com/ont/core/spectrum/AudibleSound
+<http://sensorml.com/ont/core/spectrum/AudibleSound> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://sensorml.com/ont/core/spectrum/Acoustic> ;
+                                                     <http://www.w3.org/2004/02/skos/core#definition> "Audible Sound (or just Sound) is the part of the acoustic spectrum that is audible to the human ear, with frequencies ranging from 20Hz to 20kHz." .
+
+
+###  http://sensorml.com/ont/core/spectrum/Electromagnetic
+<http://sensorml.com/ont/core/spectrum/Electromagnetic> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://sensorml.com/ont/core/spectrum/FrequencyBand> ;
+                                                        rdfs:seeAlso <https://en.wikipedia.org/wiki/Electromagnetic_spectrum> ;
+                                                        <http://www.w3.org/2004/02/skos/core#definition> """The electromagnetic spectrum is the range of frequencies (the spectrum) of electromagnetic radiation and their respective wavelengths and photon energies.
+
+Electromagnetic radiation (EM radiation or EMR) refers to the waves (or their quanta, photons) of the electromagnetic field, propagating through space, carrying electromagnetic radiant energy. It includes radio waves, microwaves, infrared, (visible) light, ultraviolet, X-rays, and gamma rays.""" .
+
+
+###  http://sensorml.com/ont/core/spectrum/FrequencyBand
+<http://sensorml.com/ont/core/spectrum/FrequencyBand> rdf:type owl:Class .
+
+
+###  http://sensorml.com/ont/core/spectrum/Gamma
+<http://sensorml.com/ont/core/spectrum/Gamma> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://sensorml.com/ont/core/spectrum/Electromagnetic> ;
+                                              rdfs:seeAlso <https://en.wikipedia.org/wiki/Gamma_ray> ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "A gamma ray, or gamma radiation, is a penetrating electromagnetic radiation arising from the radioactive decay of atomic nuclei. It consists of the shortest wavelength electromagnetic waves (typically less than 10 picometers) with the highest photon energy." .
+
+
+###  http://sensorml.com/ont/core/spectrum/Infrared
+<http://sensorml.com/ont/core/spectrum/Infrared> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://sensorml.com/ont/core/spectrum/Electromagnetic> ;
+                                                 rdfs:seeAlso <https://en.wikipedia.org/wiki/Infrared> ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Infrared (IR), sometimes called infrared light, is the part of the electromagnetic spectrum with wavelengths longer than those of visible light, between 700nm and 1mm." .
+
+
+###  http://sensorml.com/ont/core/spectrum/Infrasound
+<http://sensorml.com/ont/core/spectrum/Infrasound> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://sensorml.com/ont/core/spectrum/Acoustic> ;
+                                                   rdfs:seeAlso <https://en.wikipedia.org/wiki/Infrasound> ;
+                                                   <http://www.w3.org/2004/02/skos/core#definition> "Infrasound, sometimes referred to as low-frequency sound, describes sound waves with a frequency below the lower limit of audibility, generally set at 20 Hz." .
+
+
+###  http://sensorml.com/ont/core/spectrum/Microwave
+<http://sensorml.com/ont/core/spectrum/Microwave> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://sensorml.com/ont/core/spectrum/Radio> ;
+                                                  rdfs:seeAlso <https://en.wikipedia.org/wiki/Microwave> ;
+                                                  <http://www.w3.org/2004/02/skos/core#definition> "Microwave is the upper part of the radio spectrum with wavelengths ranging from about one meter to one millimeter (frequencies between 300 MHz and 300 GHz)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/Radio
+<http://sensorml.com/ont/core/spectrum/Radio> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://sensorml.com/ont/core/spectrum/Electromagnetic> ;
+                                              rdfs:seeAlso <https://en.wikipedia.org/wiki/Radio_spectrum> ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "The radio spectrum is the part of the electromagnetic spectrum with frequencies from 30 Hz to 300 GHz." .
+
+
+###  http://sensorml.com/ont/core/spectrum/Ultrasound
+<http://sensorml.com/ont/core/spectrum/Ultrasound> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://sensorml.com/ont/core/spectrum/Acoustic> ;
+                                                   rdfs:seeAlso <https://en.wikipedia.org/wiki/Ultrasound> ;
+                                                   <http://www.w3.org/2004/02/skos/core#definition> "Ultrasound is sound waves with frequencies higher than the upper audible limit of human hearing, which is usually set at 20 kilohertz. Ultrasound devices operate with frequencies from 20 kHz up to several gigahertz." .
+
+
+###  http://sensorml.com/ont/core/spectrum/Ultraviolet
+<http://sensorml.com/ont/core/spectrum/Ultraviolet> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://sensorml.com/ont/core/spectrum/Electromagnetic> ;
+                                                    rdfs:seeAlso <https://en.wikipedia.org/wiki/Ultraviolet> ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "Ultraviolet (UV) is a form of electromagnetic radiation with wavelength from 10 nm (frequency of 30 PHz) to 400 nm (750 THz), shorter than that of visible light but longer than X-rays. UV radiation is present in sunlight, and constitutes about 10% of the total electromagnetic radiation output from the Sun." .
+
+
+###  http://sensorml.com/ont/core/spectrum/Visible
+<http://sensorml.com/ont/core/spectrum/Visible> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://sensorml.com/ont/core/spectrum/Electromagnetic> ;
+                                                rdfs:seeAlso <https://en.wikipedia.org/wiki/Visible_spectrum> ;
+                                                <http://www.w3.org/2004/02/skos/core#definition> "The visible spectrum is the portion of the electromagnetic spectrum that is visible to the human eye. Electromagnetic radiation in this domain is called visible light and has a wavelength comprised between 380 and 740 nanometers (405–790 THz)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/XRay
+<http://sensorml.com/ont/core/spectrum/XRay> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://sensorml.com/ont/core/spectrum/Electromagnetic> ;
+                                             rdfs:seeAlso <https://en.wikipedia.org/wiki/X-ray> ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> """X-rays make up X-radiation, a form of high-energy electromagnetic radiation. X-rays have a wavelength ranging from 10 picometres to 10 nanometres, corresponding to frequencies in the range 30 petahertz to 30 exahertz.
+
+X-rays are generally emitted by electrons, which is the main characteristic that distinguishes them from gamma rays that are emitted by the atomic nucleus.""" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sensorml.com/ont/core/spectrum/Blue
+<http://sensorml.com/ont/core/spectrum/Blue> rdf:type owl:NamedIndividual ,
+                                                      <http://sensorml.com/ont/core/spectrum/Visible> ;
+                                             rdfs:seeAlso "https://en.wikipedia.org/wiki/Color#Physics_of_color" ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> """Region of the visible electromagnetic spectrum centered around a wavelength comprised between 450nm and 490nm. 
+
+The exact wavelength range depends on the sensor but color digital cameras are typically sensitive to wavelengths comprised between 400nm and 520nm on the blue channel.""" .
+
+
+###  http://sensorml.com/ont/core/spectrum/EHF
+<http://sensorml.com/ont/core/spectrum/EHF> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Radio> ;
+                                            rdfs:label "Extremely High Frequency" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Extremely_high_frequency> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Region of the electromagnetic spectrum with frequency comprised between 30 and 300 GHz (wavelength 10 - 1 mm)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/ELF
+<http://sensorml.com/ont/core/spectrum/ELF> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Radio> ;
+                                            rdfs:label "Extremely Low Frequency" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Extremely_low_frequency> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Region of the electromagnetic spectrum with frequency comprised between 3 and 30 Hz (wavelength 100,000 - 10,000 km)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/EUV
+<http://sensorml.com/ont/core/spectrum/EUV> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Ultraviolet> ;
+                                            rdfs:label "Extreme ultraviolet" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Ultraviolet#Subtypes> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Ultraviolet radiation with wavelength comprised between 10nm and 121nm." .
+
+
+###  http://sensorml.com/ont/core/spectrum/FIR
+<http://sensorml.com/ont/core/spectrum/FIR> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Infrared> ;
+                                            rdfs:label "Far Infrared" ;
+                                            rdfs:seeAlso "https://en.wikipedia.org/wiki/Infrared#Regions_within_the_infrared" ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Region of the infrared electromagnetic spectrum with wavelengths comprised between 15µm and 1000µm (frequency 0.3-20 THz)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/FUV
+<http://sensorml.com/ont/core/spectrum/FUV> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Ultraviolet> ;
+                                            rdfs:label "Far ultraviolet" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Ultraviolet#Subtypes> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Ultraviolet radiation with wavelength comprised between 122nm and 200nm." .
+
+
+###  http://sensorml.com/ont/core/spectrum/Green
+<http://sensorml.com/ont/core/spectrum/Green> rdf:type owl:NamedIndividual ,
+                                                       <http://sensorml.com/ont/core/spectrum/Visible> ;
+                                              rdfs:seeAlso "https://en.wikipedia.org/wiki/Color#Physics_of_color" ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> """Region of the visible electromagnetic spectrum centered around a wavelength comprised between 520nm and 560nm. 
+
+The exact wavelength range depends on the sensor but color digital cameras are typically sensitive to wavelengths comprised between 480nm and 610nm on the green channel.""" .
+
+
+###  http://sensorml.com/ont/core/spectrum/HF
+<http://sensorml.com/ont/core/spectrum/HF> rdf:type owl:NamedIndividual ,
+                                                    <http://sensorml.com/ont/core/spectrum/Radio> ;
+                                           rdfs:label "High Frequency" ;
+                                           rdfs:seeAlso <https://en.wikipedia.org/wiki/High_frequency> ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "Region of the electromagnetic spectrum with frequency comprised between 3 and 30 MHz (wavelength 100 - 10 m)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/LF
+<http://sensorml.com/ont/core/spectrum/LF> rdf:type owl:NamedIndividual ,
+                                                    <http://sensorml.com/ont/core/spectrum/Radio> ;
+                                           rdfs:label "Low Frequency" ;
+                                           rdfs:seeAlso <https://en.wikipedia.org/wiki/Low_frequency> ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "Region of the electromagnetic spectrum with frequency comprised between 30 and 300 kHz (wavelength 10 - 1 km)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/LWIR
+<http://sensorml.com/ont/core/spectrum/LWIR> rdf:type owl:NamedIndividual ,
+                                                      <http://sensorml.com/ont/core/spectrum/Infrared> ;
+                                             rdfs:label "Long-wave Infrared" ;
+                                             rdfs:seeAlso "https://en.wikipedia.org/wiki/Infrared#Regions_within_the_infrared" ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "Region of the infrared electromagnetic spectrum with wavelengths comprised between 8µm and 15µm (frequency 20-37 THz). This is the \"thermal imaging\" region." .
+
+
+###  http://sensorml.com/ont/core/spectrum/MF
+<http://sensorml.com/ont/core/spectrum/MF> rdf:type owl:NamedIndividual ,
+                                                    <http://sensorml.com/ont/core/spectrum/Radio> ;
+                                           rdfs:label "Medium Frequency" ;
+                                           rdfs:seeAlso <https://en.wikipedia.org/wiki/Medium_frequency> ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "Region of the electromagnetic spectrum with frequency comprised between 300 and 3,000 kHz (wavelength 1,000 - 100 m)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/MUV
+<http://sensorml.com/ont/core/spectrum/MUV> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Ultraviolet> ;
+                                            rdfs:label "Middle ultraviolet" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Ultraviolet#Subtypes> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Ultraviolet radiation with wavelength comprised between 200nm and 300nm." .
+
+
+###  http://sensorml.com/ont/core/spectrum/MWIR
+<http://sensorml.com/ont/core/spectrum/MWIR> rdf:type owl:NamedIndividual ,
+                                                      <http://sensorml.com/ont/core/spectrum/Infrared> ;
+                                             rdfs:label "Mid-wave Infrared" ;
+                                             rdfs:seeAlso "https://en.wikipedia.org/wiki/Infrared#Regions_within_the_infrared" ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "Region of the infrared electromagnetic spectrum with wavelengths comprised between 3µm and 8µm (frequency 37-100 THz)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/NIR
+<http://sensorml.com/ont/core/spectrum/NIR> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Infrared> ;
+                                            rdfs:label "Near-infrared" ;
+                                            rdfs:seeAlso "https://en.wikipedia.org/wiki/Infrared#Regions_within_the_infrared" ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Region of the infrared electromagnetic spectrum with wavelengths comprised between 0.75µm and 1.4µm (frequency 214-400 THz)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/NUV
+<http://sensorml.com/ont/core/spectrum/NUV> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Ultraviolet> ;
+                                            rdfs:label "Near ultraviolet" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Ultraviolet#Subtypes> ,
+                                                         "Ultraviolet radiation with wavelength comprised between 300nm and 400nm." .
+
+
+###  http://sensorml.com/ont/core/spectrum/Panchromatic
+<http://sensorml.com/ont/core/spectrum/Panchromatic> rdf:type owl:NamedIndividual ,
+                                                              <http://sensorml.com/ont/core/spectrum/Visible> ;
+                                                     rdfs:seeAlso "https://en.wikipedia.org/wiki/Pansharpened_image" ;
+                                                     <http://www.w3.org/2004/02/skos/core#definition> """A panchromatic band is a spectral band that incorporates most if not all of the visible electromagnetic spectrum.
+
+Digital panchromatic imagery is often produced by EO satellites as the higher signal-to-noise ratio allows for much higher spatial resolutions.""" .
+
+
+###  http://sensorml.com/ont/core/spectrum/Red
+<http://sensorml.com/ont/core/spectrum/Red> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Visible> ;
+                                            rdfs:seeAlso "https://en.wikipedia.org/wiki/Color#Physics_of_color" ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> """Region of the visible electromagnetic spectrum centered around a wavelength comprised between 635nm and 700nm. 
+
+The exact wavelength range depends on the sensor but color digital cameras are typically sensitive to wavelengths comprised between 580nm and 720nm on the red channel.""" .
+
+
+###  http://sensorml.com/ont/core/spectrum/SHF
+<http://sensorml.com/ont/core/spectrum/SHF> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Radio> ;
+                                            rdfs:label "Super High Frequency" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Super_high_frequency> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Region of the electromagnetic spectrum with frequency comprised between 3 and 30 GHz (wavelength 100 - 10 mm)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/SLF
+<http://sensorml.com/ont/core/spectrum/SLF> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Radio> ;
+                                            rdfs:label "Super Low Frequency" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Super_low_frequency> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Region of the electromagnetic spectrum with frequency comprised between 30 and 300 Hz (wavelength 10,000 - 1,000 km)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/SWIR
+<http://sensorml.com/ont/core/spectrum/SWIR> rdf:type owl:NamedIndividual ,
+                                                      <http://sensorml.com/ont/core/spectrum/Infrared> ;
+                                             rdfs:label "Short-wave Infrared" ;
+                                             rdfs:seeAlso "https://en.wikipedia.org/wiki/Infrared#Regions_within_the_infrared" ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "Region of the infrared electromagnetic spectrum with wavelengths comprised between 1.4µm and 3µm (frequency 100-214 THz)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/THF
+<http://sensorml.com/ont/core/spectrum/THF> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Radio> ;
+                                            rdfs:label "Tremendously High Frequency" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Terahertz_radiation> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Region of the electromagnetic spectrum with frequency comprised between 300 and 3,000 GHz (wavelength 1 - 0.1 mm). Also called THz for Terahertz." .
+
+
+###  http://sensorml.com/ont/core/spectrum/UHF
+<http://sensorml.com/ont/core/spectrum/UHF> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Radio> ;
+                                            rdfs:label "Ultra High Frequency" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Ultra_high_frequency> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Region of the electromagnetic spectrum with frequency comprised between 300 and 3,000 MHz (wavelength 1 - 0.1 m)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/ULF
+<http://sensorml.com/ont/core/spectrum/ULF> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Radio> ;
+                                            rdfs:label "Ultra Low Frequency" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Ultra_low_frequency> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Region of the electromagnetic spectrum with frequency comprised between 300 and 3,000 Hz (wavelength 1,000 - 100 km)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/UVA
+<http://sensorml.com/ont/core/spectrum/UVA> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Ultraviolet> ;
+                                            rdfs:label "Ultraviolet A" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Ultraviolet#Subtypes> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Ultraviolet radiation with wavelength comprised between 400nm and 315nm." .
+
+
+###  http://sensorml.com/ont/core/spectrum/UVB
+<http://sensorml.com/ont/core/spectrum/UVB> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Ultraviolet> ;
+                                            rdfs:label "Ultraviolet B" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Ultraviolet#Subtypes> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Ultraviolet radiation with wavelength comprised between 315nm and 280nm." .
+
+
+###  http://sensorml.com/ont/core/spectrum/UVC
+<http://sensorml.com/ont/core/spectrum/UVC> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Ultraviolet> ;
+                                            rdfs:label "Ultraviolet C" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Ultraviolet#Subtypes> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Ultraviolet radiation with wavelength comprised between 280nm and 100nm." .
+
+
+###  http://sensorml.com/ont/core/spectrum/VHF
+<http://sensorml.com/ont/core/spectrum/VHF> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Radio> ;
+                                            rdfs:label "Very High Frequency" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Very_high_frequency> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Region of the electromagnetic spectrum with frequency comprised between 30 and 300 MHz (wavelength 10-1 m)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/VLF
+<http://sensorml.com/ont/core/spectrum/VLF> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Radio> ;
+                                            rdfs:label "Very Low Frequency" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Very_low_frequency> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Region of the electromagnetic spectrum with frequency comprised between 3 and 30 kHz (wavelength 100 - 10 km)." .
+
+
+###  http://sensorml.com/ont/core/spectrum/VUV
+<http://sensorml.com/ont/core/spectrum/VUV> rdf:type owl:NamedIndividual ,
+                                                     <http://sensorml.com/ont/core/spectrum/Ultraviolet> ;
+                                            rdfs:label "Vacuum ultraviolet" ;
+                                            rdfs:seeAlso <https://en.wikipedia.org/wiki/Ultraviolet#Subtypes> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Ultraviolet radiation with wavelength comprised between 10nm and 200nm." .
+
+
+###  http://sensorml.com/ont/core/spectrum/IEEE/C_band
+<http://sensorml.com/ont/core/spectrum/IEEE/C_band> rdf:type owl:NamedIndividual ,
+                                                             <http://sensorml.com/ont/core/spectrum/Microwave> ;
+                                                    rdfs:seeAlso <https://en.wikipedia.org/wiki/C_band> ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "The C band is the IEEE designation for a part of the microwave band of the electromagnetic spectrum covering frequencies from 4 to 8 GHz." .
+
+
+###  http://sensorml.com/ont/core/spectrum/IEEE/K_band
+<http://sensorml.com/ont/core/spectrum/IEEE/K_band> rdf:type owl:NamedIndividual ,
+                                                             <http://sensorml.com/ont/core/spectrum/Microwave> ;
+                                                    rdfs:seeAlso <https://en.wikipedia.org/wiki/K_band_(IEEE)> ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "The K band is the IEEE designation for a part of the microwave band of the electromagnetic spectrum covering frequencies from 18 to 27 GHz." .
+
+
+###  http://sensorml.com/ont/core/spectrum/IEEE/Ka_band
+<http://sensorml.com/ont/core/spectrum/IEEE/Ka_band> rdf:type owl:NamedIndividual ,
+                                                              <http://sensorml.com/ont/core/spectrum/Microwave> ;
+                                                     rdfs:seeAlso <https://en.wikipedia.org/wiki/Ka_band> ;
+                                                     <http://www.w3.org/2004/02/skos/core#definition> "The Ka band is the IEEE designation for a part of the microwave band of the electromagnetic spectrum covering frequencies from 27 to 40 GHz." .
+
+
+###  http://sensorml.com/ont/core/spectrum/IEEE/Ku_band
+<http://sensorml.com/ont/core/spectrum/IEEE/Ku_band> rdf:type owl:NamedIndividual ,
+                                                              <http://sensorml.com/ont/core/spectrum/Microwave> ;
+                                                     rdfs:seeAlso <https://en.wikipedia.org/wiki/Ku_band> ;
+                                                     <http://www.w3.org/2004/02/skos/core#definition> "The Ku band is the IEEE designation for a part of the microwave band of the electromagnetic spectrum covering frequencies from 12 to 18 GHz." .
+
+
+###  http://sensorml.com/ont/core/spectrum/IEEE/L_band
+<http://sensorml.com/ont/core/spectrum/IEEE/L_band> rdf:type owl:NamedIndividual ,
+                                                             <http://sensorml.com/ont/core/spectrum/Microwave> ;
+                                                    rdfs:seeAlso <https://en.wikipedia.org/wiki/L_band> ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "The S band is the IEEE designation for a part of the microwave band of the electromagnetic spectrum covering frequencies from 1 to 2 GHz." .
+
+
+###  http://sensorml.com/ont/core/spectrum/IEEE/S_band
+<http://sensorml.com/ont/core/spectrum/IEEE/S_band> rdf:type owl:NamedIndividual ,
+                                                             <http://sensorml.com/ont/core/spectrum/Microwave> ;
+                                                    rdfs:seeAlso <https://en.wikipedia.org/wiki/S_band> ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "The S band is the IEEE designation for a part of the microwave band of the electromagnetic spectrum covering frequencies from 2 to 4 GHz." .
+
+
+###  http://sensorml.com/ont/core/spectrum/IEEE/V_band
+<http://sensorml.com/ont/core/spectrum/IEEE/V_band> rdf:type owl:NamedIndividual ,
+                                                             <http://sensorml.com/ont/core/spectrum/Microwave> ;
+                                                    rdfs:seeAlso <https://en.wikipedia.org/wiki/V_band> ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "The V band is the IEEE designation for a part of the microwave band of the electromagnetic spectrum covering frequencies from 40 to 75 GHz." .
+
+
+###  http://sensorml.com/ont/core/spectrum/IEEE/W_band
+<http://sensorml.com/ont/core/spectrum/IEEE/W_band> rdf:type owl:NamedIndividual ,
+                                                             <http://sensorml.com/ont/core/spectrum/Microwave> ;
+                                                    rdfs:seeAlso <https://en.wikipedia.org/wiki/W_band> ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "The W band is the IEEE designation for a part of the microwave band of the electromagnetic spectrum covering frequencies from 75 to 110 GHz." .
+
+
+###  http://sensorml.com/ont/core/spectrum/IEEE/X_band
+<http://sensorml.com/ont/core/spectrum/IEEE/X_band> rdf:type owl:NamedIndividual ,
+                                                             <http://sensorml.com/ont/core/spectrum/Microwave> ;
+                                                    rdfs:seeAlso <https://en.wikipedia.org/wiki/X_band> ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "The X band is the IEEE designation for a part of the microwave band of the electromagnetic spectrum covering frequencies from 8 to 12 GHz." .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
