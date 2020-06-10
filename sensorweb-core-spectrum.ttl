@@ -7,7 +7,7 @@
 @base <http://sensorml.com/ont/core/spectrum> .
 
 <http://sensorml.com/ont/core/spectrum> rdf:type owl:Ontology ;
-                                         <http://purl.org/dc/terms/creator> "Alex Robin" ;
+                                         <http://purl.org/dc/terms/creator> "OpenSensorHub Community" ;
                                          rdfs:label "SensorWeb Frequency Bands Ontology" ;
                                          owl:versionInfo 1.0 .
 

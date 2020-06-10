@@ -1,0 +1,129 @@
+@prefix : <http://sensorml.com/ont/core/stat/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://sensorml.com/ont/core/stat> .
+
+<http://sensorml.com/ont/core/stat> rdf:type owl:Ontology ;
+                                     <http://purl.org/dc/terms/creator> "OpenSensorHub Community" ;
+                                     rdfs:label "SensorWeb Statistics Ontology" ;
+                                     owl:versionInfo 1.0 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+<http://www.w3.org/2004/02/skos/core#exactMatch> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sensorml.com/ont/core/stat/CentralTendency
+:CentralTendency rdf:type owl:Class ;
+                 rdfs:subClassOf :SummaryStatistic ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "A Central Tendency (or measure of central tendency) is a central or typical value for a probability distribution." ;
+                 <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/STATO_0000029> .
+
+
+###  http://sensorml.com/ont/core/stat/Max
+:Max rdf:type owl:Class ;
+     rdfs:subClassOf :SummaryStatistic ;
+     rdfs:label "Maximum Value" ;
+     <http://www.w3.org/2004/02/skos/core#definition> "The Max is the maximum (greatest) value in a data set." ;
+     <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/STATO_0000151> .
+
+
+###  http://sensorml.com/ont/core/stat/Mean
+:Mean rdf:type owl:Class ;
+      rdfs:subClassOf :CentralTendency ;
+      rdfs:label "Arithmetic Mean" ;
+      <http://www.w3.org/2004/02/skos/core#definition> "The Arithmetic Mean (or simply mean) is the sum of all values in a data set divided by the number of observations in the data set." ;
+      <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/STATO_0000573> .
+
+
+###  http://sensorml.com/ont/core/stat/MeasureOfDispersion
+:MeasureOfDispersion rdf:type owl:Class ;
+                     rdfs:subClassOf :SummaryStatistic ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "A Measure of Dispersion (also called variability, scatter, or spread) describes the extent to which a distribution is stretched or squeezed." ;
+                     <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/STATO_0000028> .
+
+
+###  http://sensorml.com/ont/core/stat/Median
+:Median rdf:type owl:Class ;
+        rdfs:subClassOf :CentralTendency ;
+        <http://www.w3.org/2004/02/skos/core#definition> "The Median is the middle value that separates the higher half from the lower half of the data set." ;
+        <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/STATO_0000574> .
+
+
+###  http://sensorml.com/ont/core/stat/Midrange
+:Midrange rdf:type owl:Class ;
+          rdfs:subClassOf :CentralTendency ;
+          <http://www.w3.org/2004/02/skos/core#definition> "The Midrange is the arithmetic mean of the maximum and minimum values of a data set." .
+
+
+###  http://sensorml.com/ont/core/stat/Min
+:Min rdf:type owl:Class ;
+     rdfs:subClassOf :SummaryStatistic ;
+     rdfs:label "Minimum Value" ;
+     <http://www.w3.org/2004/02/skos/core#definition> "The Min is the minimum (lowest) value in a data set." ;
+     <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/STATO_0000150> .
+
+
+###  http://sensorml.com/ont/core/stat/Mode
+:Mode rdf:type owl:Class ;
+      rdfs:subClassOf :CentralTendency ;
+      <http://www.w3.org/2004/02/skos/core#definition> "The Mode is the most frequent value in the data set. This is the only central tendency measure that can be used with nominal data, which have purely qualitative category assignments." ;
+      <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/STATO_0000033> .
+
+
+###  http://sensorml.com/ont/core/stat/MovingTemporalWindow
+:MovingTemporalWindow rdf:type owl:Class ;
+                      rdfs:subClassOf :SamplingWindow .
+
+
+###  http://sensorml.com/ont/core/stat/SamplingWindow
+:SamplingWindow rdf:type owl:Class ;
+                rdfs:subClassOf owl:Thing .
+
+
+###  http://sensorml.com/ont/core/stat/StandardDeviation
+:StandardDeviation rdf:type owl:Class ;
+                   rdfs:subClassOf :MeasureOfDispersion ;
+                   rdfs:seeAlso <https://en.wikipedia.org/wiki/Standard_deviation> ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "The Standard Deviation is the measure of dispersion of a data set from its mean. It measures the absolute variability of a distribution; the higher the dispersion or variability, the greater is the standard deviation and greater will be the magnitude of the deviation of the value from their mean." ;
+                   <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/STATO_0000237> .
+
+
+###  http://sensorml.com/ont/core/stat/SummaryStatistic
+:SummaryStatistic rdf:type owl:Class ;
+                  rdfs:subClassOf owl:Thing ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Summary Statistics are used in descriptive statistics to summarize a set of observations, in order to communicate the largest amount of information as simply as possible." .
+
+
+###  http://sensorml.com/ont/core/stat/TemporalWindow
+:TemporalWindow rdf:type owl:Class ;
+                rdfs:subClassOf :SamplingWindow .
+
+
+###  http://sensorml.com/ont/core/stat/Variance
+:Variance rdf:type owl:Class ;
+          rdfs:subClassOf :MeasureOfDispersion ;
+          rdfs:seeAlso :StandardDeviation ;
+          <http://www.w3.org/2004/02/skos/core#definition> "The Variance is the square of the Standard Deviation" ;
+          <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/STATO_0000113> .
+
+
+###  http://sensorml.com/ont/core/stat/WeightedMean
+:WeightedMean rdf:type owl:Class ;
+              rdfs:subClassOf :CentralTendency ;
+              rdfs:label "Weighted Arithmetic Mean" ;
+              <http://www.w3.org/2004/02/skos/core#definition> "The Weighted Arithmetic Mean (or simply weighted mean) is similar to an ordinary arithmetic mean, except that instead of each of the data points contributing equally to the final average, some data points contribute more than others, according to their respective (non-negative) weights." ;
+              <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/STATO_0000398> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

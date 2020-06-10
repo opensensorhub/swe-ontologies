@@ -8,7 +8,7 @@
 
 <http://sensorml.com/ont/core/system> rdf:type owl:Ontology ;
                                        owl:imports <http://www.w3.org/ns/ssn/systems/> ;
-                                       <http://purl.org/dc/terms/creator> "Alex Robin" ;
+                                       <http://purl.org/dc/terms/creator> "OpenSensorHub Community" ;
                                        rdfs:comment "Ontology of generic system and component types" ;
                                        rdfs:label "SensorWeb System Types Ontology" ;
                                        owl:versionInfo 1.0 .

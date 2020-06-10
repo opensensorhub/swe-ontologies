@@ -9,7 +9,7 @@
 <http://sensorml.com/ont/core/property> rdf:type owl:Ontology ;
                                          owl:imports <http://qudt.org/2.1/vocab/quantitykind> ,
                                                      <http://www.w3.org/ns/ssn/systems/> ;
-                                         <http://purl.org/dc/terms/creator> "Alex Robin" ;
+                                         <http://purl.org/dc/terms/creator> "OpenSensorHub Community" ;
                                          rdfs:label "SensorWeb Properties Ontology" ;
                                          owl:versionInfo 1.0 .
 
@@ -529,6 +529,13 @@ In the resulting image, a panning motion makes the view seemingly translate alon
                                                    <http://www.w3.org/2004/02/skos/core#definition> "The pitch angle is one of the Tait-Bryan angles (Euler angles). It quantifies the rotation around the lateral axis, causing the nose of the object to point up or down from the local horizontal plane." .
 
 
+###  http://sensorml.com/ont/core/property/PlatformType
+<http://sensorml.com/ont/core/property/PlatformType> rdf:type owl:NamedIndividual ,
+                                                              <http://sensorml.com/ont/core/property/Classifier> ;
+                                                     <http://www.w3.org/2004/02/skos/core#definition> "Type of platform, usually further qualified by an application specific code space." ;
+                                                     <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/def/property/OGC/0/PlatformType> .
+
+
 ###  http://sensorml.com/ont/core/property/Position
 <http://sensorml.com/ont/core/property/Position> rdf:type owl:NamedIndividual ,
                                                           <http://www.w3.org/ns/sosa/ObservableProperty> ;
@@ -679,6 +686,14 @@ Note: Accuracy is closeness of the measurements to a specific value, while preci
                                                           <http://www.w3.org/2004/02/skos/core#definition> """The sampling frequency (or sampling rate) defines the number of samples per second (or per other temporal unit) taken from a continuous signal to make a discrete or digital signal. 
 
 The Nyquist–Shannon sampling theorem (Nyquist principle) states that perfect reconstruction of a signal is possible when the sampling frequency is greater than twice the maximum frequency of the signal being sampled.""" .
+
+
+###  http://sensorml.com/ont/core/property/SensorType
+<http://sensorml.com/ont/core/property/SensorType> rdf:type owl:NamedIndividual ,
+                                                            <http://sensorml.com/ont/core/property/Classifier> ;
+                                                   <http://www.w3.org/2004/02/skos/core#definition> "Type of sensor, usually further qualified by an application specific code space." ;
+                                                   <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.nerc.ac.uk/collection/W06/current/CLSS0002/> ,
+                                                                                                    <http://www.opengis.net/def/property/OGC/0/SensorType> .
 
 
 ###  http://sensorml.com/ont/core/property/SequenceNumber
@@ -961,12 +976,6 @@ It can be further qualified with a codespace such as the International Mobile Eq
                                                                 <http://www.w3.org/2004/02/skos/core#definition> "Orientation of a platform carrying an object of interest (such as a sensor), with respect to a frame of reference. The coordinate frame whose orientation is provided should be formally defined by an engineering datum attached to the platform." .
 
 
-###  http://www.opengis.net/def/property/OGC/0/PlatformType
-<http://www.opengis.net/def/property/OGC/0/PlatformType> rdf:type owl:NamedIndividual ,
-                                                                  <http://sensorml.com/ont/core/property/Classifier> ;
-                                                         <http://www.w3.org/2004/02/skos/core#definition> "Type of platform, usually further qualified by an application specific code space." .
-
-
 ###  http://www.opengis.net/def/property/OGC/0/RunTime
 <http://www.opengis.net/def/property/OGC/0/RunTime> rdf:type owl:NamedIndividual ,
                                                              <http://sensorml.com/ont/core/property/DataProperty> ;
@@ -1009,12 +1018,6 @@ It can be further qualified with a codespace such as the International Mobile Eq
                                                                        <http://www.w3.org/ns/sosa/ObservableProperty> ;
                                                               <http://www.w3.org/2004/02/skos/core#broader> :Orientation ;
                                                               <http://www.w3.org/2004/02/skos/core#definition> "Orientation of a sensor with respect to a frame of reference. The coordinate frame whose orientation is provided should be formally defined by an engineering datum attached to the sensor." .
-
-
-###  http://www.opengis.net/def/property/OGC/0/SensorType
-<http://www.opengis.net/def/property/OGC/0/SensorType> rdf:type owl:NamedIndividual ,
-                                                                <http://sensorml.com/ont/core/property/Classifier> ;
-                                                       <http://www.w3.org/2004/02/skos/core#definition> "Type of sensor, usually further qualified by an application specific code space." .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/2004/02/skos/core" uri="http://www.w3.org/TR/skos-reference/skos.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/vocab/quantitykind" uri="qudt_quantitykind_noimports.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/ssn/systems/" uri="https://www.w3.org/ns/ssn/systems"/>
+</catalog>

@@ -9,7 +9,7 @@
 <http://sensorml.com/ont/eor/property> rdf:type owl:Ontology ;
                                     owl:imports <http://qudt.org/2.1/vocab/quantitykind> ,
                                                 <http://www.w3.org/ns/ssn/systems/> ;
-                                    <http://purl.org/dc/terms/creator> "Alex Robin" ;
+                                    <http://purl.org/dc/terms/creator> "OpenSensorHub Community" ;
                                     rdfs:label "SensorWeb Electro-Optical & Radar Properties Ontology" ;
                                     owl:versionInfo 1.0 .
 
