@@ -1,17 +1,17 @@
-@prefix : <http://sensorml.com/ont/property/> .
+@prefix : <http://sensorml.com/ont/swe/property/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://sensorml.com/ont/core/property> .
+@base <http://sensorml.com/ont/swe/property> .
 
-<http://sensorml.com/ont/core/property> rdf:type owl:Ontology ;
-                                         owl:imports <http://qudt.org/2.1/vocab/quantitykind> ,
-                                                     <http://www.w3.org/ns/ssn/systems/> ;
-                                         <http://purl.org/dc/terms/creator> "OpenSensorHub Community" ;
-                                         rdfs:label "SensorWeb Properties Ontology" ;
-                                         owl:versionInfo 1.0 .
+<http://sensorml.com/ont/swe/property> rdf:type owl:Ontology ;
+                                        owl:imports <http://qudt.org/2.1/vocab/quantitykind> ,
+                                                    <http://www.w3.org/ns/ssn/systems/> ;
+                                        <http://purl.org/dc/terms/creator> "OpenSensorHub Community" ;
+                                        rdfs:label "SensorWeb Properties Ontology" ;
+                                        owl:versionInfo 1.0 .
 
 #################################################################
 #    Annotation properties
@@ -29,38 +29,37 @@
 #    Classes
 #################################################################
 
-###  http://sensorml.com/ont/core/property/AssignedProperty
-<http://sensorml.com/ont/core/property/AssignedProperty> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> ;
-                                                         <http://www.w3.org/2004/02/skos/core#definition> "A property that is assigned to an entity, not measured." .
+###  http://sensorml.com/ont/swe/property/AssignedProperty
+:AssignedProperty rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "A property that is assigned to an entity, not measured." .
 
 
-###  http://sensorml.com/ont/core/property/Classifier
-<http://sensorml.com/ont/core/property/Classifier> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://sensorml.com/ont/core/property/AssignedProperty> .
+###  http://sensorml.com/ont/swe/property/Classifier
+:Classifier rdf:type owl:Class ;
+            rdfs:subClassOf :AssignedProperty .
 
 
-###  http://sensorml.com/ont/core/property/DataProperty
-<http://sensorml.com/ont/core/property/DataProperty> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> ;
-                                                     rdfs:label "Data Property" ;
-                                                     <http://www.w3.org/2004/02/skos/core#definition> "Field used in data records or messages that does not represent a measurable property (e.g. message identifiers, sequence numbers, etc.)." .
+###  http://sensorml.com/ont/swe/property/DataProperty
+:DataProperty rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> ;
+              rdfs:label "Data Property" ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Field used in data records or messages that does not represent a measurable property (e.g. message identifiers, sequence numbers, etc.)." .
 
 
-###  http://sensorml.com/ont/core/property/DataStructure
-<http://sensorml.com/ont/core/property/DataStructure> rdf:type owl:Class ;
-                                                      rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> .
+###  http://sensorml.com/ont/swe/property/DataStructure
+:DataStructure rdf:type owl:Class .
 
 
-###  http://sensorml.com/ont/core/property/Identifier
-<http://sensorml.com/ont/core/property/Identifier> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://sensorml.com/ont/core/property/AssignedProperty> .
+###  http://sensorml.com/ont/swe/property/Identifier
+:Identifier rdf:type owl:Class ;
+            rdfs:subClassOf :AssignedProperty .
 
 
-###  http://sensorml.com/ont/core/property/ResponseCurve
-<http://sensorml.com/ont/core/property/ResponseCurve> rdf:type owl:Class ;
-                                                      rdfs:subClassOf <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
-                                                      <http://www.w3.org/2004/02/skos/core#definition> "Curve used to characterize a transducer's response over a certain physical domain or with respect to another varying quantity (e.g. time domain, frequency domain, spatial domain, environmental parameters, etc.)" .
+###  http://sensorml.com/ont/swe/property/ResponseCurve
+:ResponseCurve rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Curve used to characterize a transducer's response over a certain physical domain or with respect to another varying quantity (e.g. time domain, frequency domain, spatial domain, environmental parameters, etc.)" .
 
 
 ###  http://www.w3.org/ns/sosa/ObservableProperty
@@ -71,848 +70,878 @@
 #    Individuals
 #################################################################
 
-###  http://sensorml.com/ont/core/property/AbsoluteAccuracy
-<http://sensorml.com/ont/core/property/AbsoluteAccuracy> rdf:type owl:NamedIndividual ,
-                                                                  <http://www.w3.org/ns/ssn/systems/Accuracy> ;
-                                                         rdfs:seeAlso "https://en.wikipedia.org/wiki/Accuracy_and_precision" ;
-                                                         <http://www.w3.org/2004/02/skos/core#definition> """Absolute accuracy decribes how close a measured value is to a known absolute true value, usually provided in the same unit as the measured value itself.
+###  http://sensorml.com/ont/swe/property/AbsoluteAccuracy
+:AbsoluteAccuracy rdf:type owl:NamedIndividual ,
+                           <http://www.w3.org/ns/ssn/systems/Accuracy> ;
+                  rdfs:seeAlso "https://en.wikipedia.org/wiki/Accuracy_and_precision" ;
+                  <http://www.w3.org/2004/02/skos/core#definition> """Absolute accuracy decribes how close a measured value is to a known absolute true value, usually provided in the same unit as the measured value itself.
 
 Note: Accuracy is closeness of the measurements to a specific value, while precision is the closeness of the measurements to each other.""" .
 
 
-###  http://sensorml.com/ont/core/property/AlphaChannel
-<http://sensorml.com/ont/core/property/AlphaChannel> rdf:type owl:NamedIndividual ,
-                                                              <http://sensorml.com/ont/core/property/DataProperty> ;
-                                                     rdfs:seeAlso "https://en.wikipedia.org/wiki/Channel_(digital_image)#Alpha_channel" ;
-                                                     <http://www.w3.org/2004/02/skos/core#definition> "The alpha channel of an RGBA or BGRA image." .
+###  http://sensorml.com/ont/swe/property/AlphaChannel
+:AlphaChannel rdf:type owl:NamedIndividual ,
+                       :DataProperty ;
+              rdfs:seeAlso "https://en.wikipedia.org/wiki/Channel_(digital_image)#Alpha_channel" ;
+              <http://www.w3.org/2004/02/skos/core#definition> "The alpha channel of an RGBA or BGRA image." .
 
 
-###  http://sensorml.com/ont/core/property/BarometricAltitude
-<http://sensorml.com/ont/core/property/BarometricAltitude> rdf:type owl:NamedIndividual ,
-                                                                    <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                           rdfs:seeAlso <https://en.wikipedia.org/wiki/Barometric_formula> ;
-                                                           <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Height> ;
-                                                           <http://www.w3.org/2004/02/skos/core#definition> "Barometric altitude is the altitude determined by a pressure measurement which is converted to altitude through interpolation of the International Standard Atmosphere (ICAO, 1976). A mean sea level pressure of 1013.25 hPa is used for the surface pressure." .
+###  http://sensorml.com/ont/swe/property/AzimuthAngle
+:AzimuthAngle rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/ns/sosa/ObservableProperty> ;
+              rdfs:seeAlso <https://en.wikipedia.org/wiki/Azimuth> ;
+              <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+              <http://www.w3.org/2004/02/skos/core#definition> """Azimuth is one of the angular measurements in a spherical coordinate system. In such coordinate system, the (radial) vector from an observer (origin) to a point of interest is projected perpendicularly onto a reference plane. The azimuth is the angle between the projected vector and a reference vector on the reference plane.
+
+When used in conjunction with an ENU or NED reference frame, the reference plane is the local horizontal plane and thus the azimuth angle is the horizontal angle from/to magnetic or true north.""" .
 
 
-###  http://sensorml.com/ont/core/property/BatteryCapacity
-<http://sensorml.com/ont/core/property/BatteryCapacity> rdf:type owl:NamedIndividual ,
-                                                                 <http://www.w3.org/ns/ssn/systems/OperatingProperty> ;
-                                                        rdfs:seeAlso "https://en.wikipedia.org/wiki/Electric_battery#Capacity_and_discharge" ;
-                                                        <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Energy> ;
-                                                        <http://www.w3.org/2004/02/skos/core#definition> "A battery's capacity is the amount of electric charge it can deliver at the rated voltage. Capacity is measured in units such as amp-hour (A·h)." .
+###  http://sensorml.com/ont/swe/property/BarometricAltitude
+:BarometricAltitude rdf:type owl:NamedIndividual ,
+                             <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                    rdfs:seeAlso <https://en.wikipedia.org/wiki/Barometric_formula> ;
+                    <http://www.w3.org/2004/02/skos/core#broader> :Height ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Barometric altitude is the altitude determined by a pressure measurement which is converted to altitude through interpolation of the International Standard Atmosphere (ICAO, 1976). A mean sea level pressure of 1013.25 hPa is used for the surface pressure." .
 
 
-###  http://sensorml.com/ont/core/property/BatteryLevel
-<http://sensorml.com/ont/core/property/BatteryLevel> rdf:type owl:NamedIndividual ,
-                                                              <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                     <http://www.w3.org/2004/02/skos/core#definition> "Remaining battery charge. Often expressed in % of the total battery capacity." .
+###  http://sensorml.com/ont/swe/property/BatteryCapacity
+:BatteryCapacity rdf:type owl:NamedIndividual ,
+                          <http://www.w3.org/ns/ssn/systems/OperatingProperty> ;
+                 rdfs:seeAlso "https://en.wikipedia.org/wiki/Electric_battery#Capacity_and_discharge" ;
+                 <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Energy> ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "A battery's capacity is the amount of electric charge it can deliver at the rated voltage. Capacity is measured in units such as amp-hour (A·h)." .
 
 
-###  http://sensorml.com/ont/core/property/BlueChannel
-<http://sensorml.com/ont/core/property/BlueChannel> rdf:type owl:NamedIndividual ,
-                                                             <http://sensorml.com/ont/core/property/DataProperty> ;
-                                                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Channel_(digital_image)#RGB_images" ;
-                                                    <http://www.w3.org/2004/02/skos/core#definition> """The blue channel of an RGB or BGR image. if not specified otherwise, this channel usually contains data representing an amount of blue visible light.
+###  http://sensorml.com/ont/swe/property/BatteryLevel
+:BatteryLevel rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/ns/sosa/ObservableProperty> ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Remaining battery charge. Often expressed in % of the total battery capacity." .
+
+
+###  http://sensorml.com/ont/swe/property/BlueChannel
+:BlueChannel rdf:type owl:NamedIndividual ,
+                      :DataProperty ;
+             rdfs:seeAlso "https://en.wikipedia.org/wiki/Channel_(digital_image)#RGB_images" ;
+             <http://www.w3.org/2004/02/skos/core#definition> """The blue channel of an RGB or BGR image. if not specified otherwise, this channel usually contains data representing an amount of blue visible light.
 
 When the blue channel is used for another purpose, the actual measured quantity should be documented separately.""" ;
-                                                    <http://www.w3.org/2004/02/skos/core#related> :Blue_Band .
+             <http://www.w3.org/2004/02/skos/core#related> :Blue_Band .
 
 
-###  http://sensorml.com/ont/core/property/CameraIsoSensitivity
-<http://sensorml.com/ont/core/property/CameraIsoSensitivity> rdf:type owl:NamedIndividual ,
-                                                                      <http://www.w3.org/ns/ssn/systems/Sensitivity> ;
-                                                             rdfs:label "ISO Sensitivity" ;
-                                                             <http://www.w3.org/2004/02/skos/core#definition> "ISO Sensitivity (or ISO speed) is a numerical system for quantifying the sensitivity of a photographic emulsion, or a solid-state digital-camera's image sensor, to visible light (e.g. ISO 100)." .
+###  http://sensorml.com/ont/swe/property/CameraIsoSensitivity
+:CameraIsoSensitivity rdf:type owl:NamedIndividual ,
+                               <http://www.w3.org/ns/ssn/systems/Sensitivity> ;
+                      rdfs:label "ISO Sensitivity" ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "ISO Sensitivity (or ISO speed) is a numerical system for quantifying the sensitivity of a photographic emulsion, or a solid-state digital-camera's image sensor, to visible light (e.g. ISO 100)." .
 
 
-###  http://sensorml.com/ont/core/property/CharacteristicCurve
-<http://sensorml.com/ont/core/property/CharacteristicCurve> rdf:type owl:NamedIndividual ,
-                                                                     <http://sensorml.com/ont/core/property/ResponseCurve> ;
-                                                            <http://www.w3.org/2004/02/skos/core#definition> """The characteristic curve (sometimes called calibration curve) indicates the dependence of the output signal (measured value) upon the input signal (observed property) in steady-state condition.
+###  http://sensorml.com/ont/swe/property/CharacteristicCurve
+:CharacteristicCurve rdf:type owl:NamedIndividual ,
+                              :ResponseCurve ;
+                     <http://www.w3.org/2004/02/skos/core#definition> """The characteristic curve (sometimes called calibration curve) indicates the dependence of the output signal (measured value) upon the input signal (observed property) in steady-state condition.
 
 It is a simplified way of describing the transfer function of a transducer (e.g. sensor, actuator) or other system.""" .
 
 
-###  http://sensorml.com/ont/core/property/Coordinate
-<http://sensorml.com/ont/core/property/Coordinate> rdf:type owl:NamedIndividual ,
-                                                            <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Coordinate_system" ;
-                                                   <http://www.w3.org/2004/02/skos/core#definition> "Coordinates are numerical quantities used to uniquely determine the position of a point or other geometric element on a manifold such as Euclidean space. They are used in conjuction with a coordinate system." .
+###  http://sensorml.com/ont/swe/property/Coordinate
+:Coordinate rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/ns/sosa/ObservableProperty> ;
+            rdfs:seeAlso "https://en.wikipedia.org/wiki/Coordinate_system" ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Coordinates are numerical quantities used to uniquely determine the position of a point or other geometric element on a manifold such as Euclidean space. They are used in conjuction with a coordinate system." .
 
 
-###  http://sensorml.com/ont/core/property/Count
-<http://sensorml.com/ont/core/property/Count> rdf:type owl:NamedIndividual ,
-                                                       <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                              <http://www.w3.org/2004/02/skos/core#definition> "A generic count value, that is the result of counting an integer number of elements." .
+###  http://sensorml.com/ont/swe/property/Count
+:Count rdf:type owl:NamedIndividual ,
+                <http://www.w3.org/ns/sosa/ObservableProperty> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A generic count value, that is the result of counting an integer number of elements." .
 
 
-###  http://sensorml.com/ont/core/property/CovarianceMatrix
-<http://sensorml.com/ont/core/property/CovarianceMatrix> rdf:type owl:NamedIndividual ,
-                                                                  <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                         rdfs:seeAlso <https://en.wikipedia.org/wiki/Covariance_matrix> ;
-                                                         <http://www.w3.org/2004/02/skos/core#definition> "A symmetric N×N matrix, formed by the pairwise covariances of several random variables. Sometimes called a dispersion matrix." .
+###  http://sensorml.com/ont/swe/property/CovarianceMatrix
+:CovarianceMatrix rdf:type owl:NamedIndividual ,
+                           <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                  rdfs:seeAlso <https://en.wikipedia.org/wiki/Covariance_matrix> ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "A symmetric N×N matrix, formed by the pairwise covariances of several random variables. Sometimes called a dispersion matrix." .
 
 
-###  http://sensorml.com/ont/core/property/CoverageData
-<http://sensorml.com/ont/core/property/CoverageData> rdf:type owl:NamedIndividual ,
-                                                              <http://sensorml.com/ont/core/property/DataStructure> .
+###  http://sensorml.com/ont/swe/property/CoverageData
+:CoverageData rdf:type owl:NamedIndividual ,
+                       :DataStructure .
 
 
-###  http://sensorml.com/ont/core/property/CoverageGeometry
-<http://sensorml.com/ont/core/property/CoverageGeometry> rdf:type owl:NamedIndividual ,
-                                                                  <http://sensorml.com/ont/core/property/DataStructure> ,
-                                                                  <http://www.w3.org/ns/sosa/Sample> .
+###  http://sensorml.com/ont/swe/property/CoverageGeometry
+:CoverageGeometry rdf:type owl:NamedIndividual ,
+                           :DataStructure ,
+                           <http://www.w3.org/ns/sosa/Sample> .
 
 
-###  http://sensorml.com/ont/core/property/DN
-<http://sensorml.com/ont/core/property/DN> rdf:type owl:NamedIndividual ,
-                                                    <http://sensorml.com/ont/core/property/DataProperty> ;
-                                           rdfs:label "Digital Number" ;
-                                           <http://www.w3.org/2004/02/skos/core#altLabel> "DN" ;
-                                           <http://www.w3.org/2004/02/skos/core#definition> "A digital number is the discrete digital representation of an analog value sampled by an analog-to-digital converter." .
+###  http://sensorml.com/ont/swe/property/DN
+:DN rdf:type owl:NamedIndividual ,
+             :DataProperty ;
+    rdfs:label "Digital Number" ;
+    <http://www.w3.org/2004/02/skos/core#altLabel> "DN" ;
+    <http://www.w3.org/2004/02/skos/core#definition> "A digital number is the discrete digital representation of an analog value sampled by an analog-to-digital converter." .
 
 
-###  http://sensorml.com/ont/core/property/DirectionalResponse
-<http://sensorml.com/ont/core/property/DirectionalResponse> rdf:type owl:NamedIndividual ,
-                                                                     <http://sensorml.com/ont/core/property/ResponseCurve> ;
-                                                            rdfs:seeAlso "https://en.wikipedia.org/wiki/Microphone#Polar_patterns" ,
-                                                                         "https://en.wikipedia.org/wiki/Radiation_pattern" ;
-                                                            <http://www.w3.org/2004/02/skos/core#definition> "The directional response (also called directionality or polar pattern) indicates how sensitive a transducer is to signals arriving at different angles from its central axis. It can be defined in 2 or 3 dimensions." .
+###  http://sensorml.com/ont/swe/property/DirectionalResponse
+:DirectionalResponse rdf:type owl:NamedIndividual ,
+                              :ResponseCurve ;
+                     rdfs:seeAlso "https://en.wikipedia.org/wiki/Microphone#Polar_patterns" ,
+                                  "https://en.wikipedia.org/wiki/Radiation_pattern" ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "The directional response (also called directionality or polar pattern) indicates how sensitive a transducer is to signals arriving at different angles from its central axis. It can be defined in 2 or 3 dimensions." .
 
 
-###  http://sensorml.com/ont/core/property/Duration
-<http://sensorml.com/ont/core/property/Duration> rdf:type owl:NamedIndividual ,
-                                                          <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                 <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Time> ;
-                                                 <http://www.w3.org/2004/02/skos/core#definition> "The amount of elapsed time between two events." .
+###  http://sensorml.com/ont/swe/property/Duration
+:Duration rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/ns/sosa/ObservableProperty> ;
+          <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Time> ;
+          <http://www.w3.org/2004/02/skos/core#definition> "The amount of elapsed time between two events." .
 
 
-###  http://sensorml.com/ont/core/property/DynamicRange
-<http://sensorml.com/ont/core/property/DynamicRange> rdf:type owl:NamedIndividual ,
-                                                              <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
-                                                     rdfs:seeAlso "https://en.wikipedia.org/wiki/Dynamic_range" ;
-                                                     <http://www.w3.org/2004/02/skos/core#definition> "The dynamic range is the ratio between the largest and smallest values that a certain quantity can assume (often measured in dB). It is often used in the context of signals, like sound and light." ;
-                                                     <http://www.w3.org/2004/02/skos/core#exactMatch> <http://dbpedia.org/resource/Dynamic_range> .
+###  http://sensorml.com/ont/swe/property/DynamicRange
+:DynamicRange rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
+              rdfs:seeAlso "https://en.wikipedia.org/wiki/Dynamic_range" ;
+              <http://www.w3.org/2004/02/skos/core#definition> "The dynamic range is the ratio between the largest and smallest values that a certain quantity can assume (often measured in dB). It is often used in the context of signals, like sound and light." ;
+              <http://www.w3.org/2004/02/skos/core#exactMatch> <http://dbpedia.org/resource/Dynamic_range> .
 
 
-###  http://sensorml.com/ont/core/property/EulerAngles
-<http://sensorml.com/ont/core/property/EulerAngles> rdf:type owl:NamedIndividual ,
-                                                             <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Euler_angles" ;
-                                                    <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Orientation> ;
-                                                    <http://www.w3.org/2004/02/skos/core#definition> """Euler angles are three angles used to describe the orientation of a rigid body with respect to a fixed coordinate system.
+###  http://sensorml.com/ont/swe/property/ElevationAngle
+:ElevationAngle rdf:type owl:NamedIndividual ,
+                         <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+                <http://www.w3.org/2004/02/skos/core#definition> """Elevation is one of the angular measurements in a spherical coordinate system. It is the angle between the radial vector and the reference plane.
+
+When used in conjunction with an ENU or NED reference frame, the reference plane is the local horizontal plane and the elevation angle is the vertical angle.""" .
+
+
+###  http://sensorml.com/ont/swe/property/EulerAngles
+:EulerAngles rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/ns/sosa/ObservableProperty> ;
+             rdfs:seeAlso "https://en.wikipedia.org/wiki/Euler_angles" ;
+             <http://www.w3.org/2004/02/skos/core#broader> :Orientation ;
+             <http://www.w3.org/2004/02/skos/core#definition> """Euler angles are three angles used to describe the orientation of a rigid body with respect to a fixed coordinate system.
 
 A special kind of Euler angles called Tait–Bryan angles are often used to describe the orientation of vehicles or other objects with the heading/pitch/roll or pitch/roll/yaw convention.""" ;
-                                                    <http://www.w3.org/2004/02/skos/core#exactMatch> <http://dbpedia.org/resource/Euler_angles> .
+             <http://www.w3.org/2004/02/skos/core#exactMatch> <http://dbpedia.org/resource/Euler_angles> .
 
 
-###  http://sensorml.com/ont/core/property/FieldOfView
-<http://sensorml.com/ont/core/property/FieldOfView> rdf:type owl:NamedIndividual ,
-                                                             <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
-                                                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Angle_of_view" ;
-                                                    <http://www.w3.org/2004/02/skos/core#definition> """Field of view (FOV) or angle of view (AOV) describes the angular extent of a given scene that is imaged by a camera. It can be measured vertically, horizontally, or diagonally.
+###  http://sensorml.com/ont/swe/property/FieldOfView
+:FieldOfView rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
+             rdfs:seeAlso "https://en.wikipedia.org/wiki/Field_of_view" ;
+             <http://www.w3.org/2004/02/skos/core#definition> """Field of view (FOV) describes the angular extent through which an electro-optical sensor is sensitive to electromagnetic radiation (e.g. the solid angle imaged by a camera). It can be measured vertically, horizontally, or diagonally.
 
 For the common case of rectangular image sensors, the extent has a pyramidal shape. When the image sensor is not square, horizontal and vertical field of views are different but can be mutually derived using the aspect ratio of the image.
 
-The FOV can be computed from the focal length of the optics if the metric size of the image sensor is also known.""" .
+For optical instruments, the FOV can be computed from the focal length of the optics if the metric size of the image sensor is also known.""" .
 
 
-###  http://sensorml.com/ont/core/property/FirmwareVersion
-<http://sensorml.com/ont/core/property/FirmwareVersion> rdf:type owl:NamedIndividual ,
-                                                                 <http://sensorml.com/ont/core/property/Identifier> ;
-                                                        <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/SoftwareVersion> ;
-                                                        <http://www.w3.org/2004/02/skos/core#definition> "Unique name or number assigned to identify a given state of development of a device firmware." .
+###  http://sensorml.com/ont/swe/property/FirmwareVersion
+:FirmwareVersion rdf:type owl:NamedIndividual ,
+                          :Identifier ;
+                 <http://www.w3.org/2004/02/skos/core#broader> :SoftwareVersion ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Unique name or number assigned to identify a given state of development of a device firmware." .
 
 
-###  http://sensorml.com/ont/core/property/Flag
-<http://sensorml.com/ont/core/property/Flag> rdf:type owl:NamedIndividual ,
-                                                      <http://sensorml.com/ont/core/property/DataProperty> .
+###  http://sensorml.com/ont/swe/property/Flag
+:Flag rdf:type owl:NamedIndividual ,
+               :DataProperty .
 
 
-###  http://sensorml.com/ont/core/property/FocalLength
-<http://sensorml.com/ont/core/property/FocalLength> rdf:type owl:NamedIndividual ,
-                                                             <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
-                                                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Focal_length" ;
-                                                    <http://www.w3.org/2004/02/skos/core#definition> "The focal length of an optical system is a measure of how strongly the system converges or diverges light. For a perfect lens (pinhole model), the focal length is the distance from the center of the lens to its principal foci (or focal point)." .
+###  http://sensorml.com/ont/swe/property/FocalLength
+:FocalLength rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
+             rdfs:seeAlso "https://en.wikipedia.org/wiki/Focal_length" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "The focal length of an optical system is a measure of how strongly the system converges or diverges light. For a perfect lens (pinhole model), the focal length is the distance from the center of the lens to its principal foci (or focal point)." .
 
 
-###  http://sensorml.com/ont/core/property/GeocentricLatitude
-<http://sensorml.com/ont/core/property/GeocentricLatitude> rdf:type owl:NamedIndividual ,
-                                                                    <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                           rdfs:comment "The geocentric latitude is a latitude coordinate measured as the angle between the radial direction (from centre to the point on the surface) and the equatorial plane." ;
-                                                           rdfs:seeAlso <https://en.wikipedia.org/wiki/Latitude#Geodetic_and_geocentric_latitudes> ;
-                                                           <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Latitude> .
+###  http://sensorml.com/ont/swe/property/GeocentricLatitude
+:GeocentricLatitude rdf:type owl:NamedIndividual ,
+                             <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                    rdfs:comment "The geocentric latitude is a latitude coordinate measured as the angle between the radial direction (from centre to the point on the surface) and the equatorial plane." ;
+                    rdfs:seeAlso <https://en.wikipedia.org/wiki/Latitude#Geodetic_and_geocentric_latitudes> ;
+                    <http://www.w3.org/2004/02/skos/core#broader> :Latitude .
 
 
-###  http://sensorml.com/ont/core/property/GeodeticLatitude
-<http://sensorml.com/ont/core/property/GeodeticLatitude> rdf:type owl:NamedIndividual ,
-                                                                  <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                         rdfs:seeAlso <https://en.wikipedia.org/wiki/Latitude#Geodetic_and_geocentric_latitudes> ;
-                                                         <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Latitude> ;
-                                                         <http://www.w3.org/2004/02/skos/core#definition> "The geodetic latitude is measured as the angle between the normal to the ellipsoid at the location in question and the equatorial plane." ;
-                                                         <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/def/axis-name/EPSG/0/9901> .
+###  http://sensorml.com/ont/swe/property/GeodeticLatitude
+:GeodeticLatitude rdf:type owl:NamedIndividual ,
+                           <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                  rdfs:seeAlso <https://en.wikipedia.org/wiki/Latitude#Geodetic_and_geocentric_latitudes> ;
+                  <http://www.w3.org/2004/02/skos/core#broader> :Latitude ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "The geodetic latitude is measured as the angle between the normal to the ellipsoid at the location in question and the equatorial plane." ;
+                  <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/def/axis-name/EPSG/0/9901> .
 
 
-###  http://sensorml.com/ont/core/property/GrayChannel
-<http://sensorml.com/ont/core/property/GrayChannel> rdf:type owl:NamedIndividual ,
-                                                             <http://sensorml.com/ont/core/property/DataProperty> ;
-                                                    <http://www.w3.org/2004/02/skos/core#definition> """The single channel of a grayscale image.
+###  http://sensorml.com/ont/swe/property/GrayChannel
+:GrayChannel rdf:type owl:NamedIndividual ,
+                      :DataProperty ;
+             <http://www.w3.org/2004/02/skos/core#definition> """The single channel of a grayscale image.
 
 Note that this is a very generic channel definition. It is highly recommended to use a more specific definition describing the actual measured quantity whenever possible.""" .
 
 
-###  http://sensorml.com/ont/core/property/GreenChannel
-<http://sensorml.com/ont/core/property/GreenChannel> rdf:type owl:NamedIndividual ,
-                                                              <http://sensorml.com/ont/core/property/DataProperty> ;
-                                                     rdfs:seeAlso "https://en.wikipedia.org/wiki/Channel_(digital_image)#RGB_images" ;
-                                                     <http://www.w3.org/2004/02/skos/core#definition> """The green channel of an RGB or BGR image. if not specified otherwise, this channel usually contains data representing an amount of green visible light.
+###  http://sensorml.com/ont/swe/property/GreenChannel
+:GreenChannel rdf:type owl:NamedIndividual ,
+                       :DataProperty ;
+              rdfs:seeAlso "https://en.wikipedia.org/wiki/Channel_(digital_image)#RGB_images" ;
+              <http://www.w3.org/2004/02/skos/core#definition> """The green channel of an RGB or BGR image. if not specified otherwise, this channel usually contains data representing an amount of green visible light.
 
 When the green channel is used for another purpose, the actual measured quantity should be documented separately.""" ;
-                                                     <http://www.w3.org/2004/02/skos/core#related> :Green_Band .
+              <http://www.w3.org/2004/02/skos/core#related> :Green_Band .
 
 
-###  http://sensorml.com/ont/core/property/GridCell
-<http://sensorml.com/ont/core/property/GridCell> rdf:type owl:NamedIndividual ,
-                                                          <http://sensorml.com/ont/core/property/DataStructure> .
+###  http://sensorml.com/ont/swe/property/GridCell
+:GridCell rdf:type owl:NamedIndividual ,
+                   :DataStructure .
 
 
-###  http://sensorml.com/ont/core/property/GridHeight
-<http://sensorml.com/ont/core/property/GridHeight> rdf:type owl:NamedIndividual ,
-                                                            <http://sensorml.com/ont/core/property/DataProperty> ;
-                                                   <http://www.w3.org/2004/02/skos/core#definition> "Height of a raster image or coverage grid as an integer number of cells or pixels." .
+###  http://sensorml.com/ont/swe/property/GridHeight
+:GridHeight rdf:type owl:NamedIndividual ,
+                     :DataProperty ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Height of a raster image or coverage grid as an integer number of cells or pixels." .
 
 
-###  http://sensorml.com/ont/core/property/GridRow
-<http://sensorml.com/ont/core/property/GridRow> rdf:type owl:NamedIndividual ,
-                                                         <http://sensorml.com/ont/core/property/DataStructure> .
+###  http://sensorml.com/ont/swe/property/GridRow
+:GridRow rdf:type owl:NamedIndividual ,
+                  :DataStructure .
 
 
-###  http://sensorml.com/ont/core/property/GridWidth
-<http://sensorml.com/ont/core/property/GridWidth> rdf:type owl:NamedIndividual ,
-                                                           <http://sensorml.com/ont/core/property/DataProperty> ;
-                                                  <http://www.w3.org/2004/02/skos/core#definition> "Width of a raster image or coverage grid as an integer number of cells or pixels." .
+###  http://sensorml.com/ont/swe/property/GridWidth
+:GridWidth rdf:type owl:NamedIndividual ,
+                    :DataProperty ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Width of a raster image or coverage grid as an integer number of cells or pixels." .
 
 
-###  http://sensorml.com/ont/core/property/GroundSpeed
-<http://sensorml.com/ont/core/property/GroundSpeed> rdf:type owl:NamedIndividual ,
-                                                             <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                    owl:sameAs <http://sensorml.com/ont/core/property/SpeedOverGround> ;
-                                                    <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Speed> ;
-                                                    <http://www.w3.org/2004/02/skos/core#definition> "Ground speed (or Speed over Ground, or SOG) is the speed of a vehicle relative to the ground, that is to say relative to an Earth fixed coordinate frame such as ECEF. A GPS receiver reports ground speed." .
+###  http://sensorml.com/ont/swe/property/GroundSpeed
+:GroundSpeed rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/ns/sosa/ObservableProperty> ;
+             owl:sameAs :SpeedOverGround ;
+             <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Speed> ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Ground speed (or Speed over Ground, or SOG) is the speed of a vehicle relative to the ground, that is to say relative to an Earth fixed coordinate frame such as ECEF. A GPS receiver reports ground speed." .
 
 
-###  http://sensorml.com/ont/core/property/Height
-<http://sensorml.com/ont/core/property/Height> rdf:type owl:NamedIndividual ,
-                                                        <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                               <http://www.w3.org/2004/02/skos/core#definition> "Height (or elevation, or altitude) is a measure of a vertical distance with respect to a certain vertical datum (e.g the surface of the earth)." .
+###  http://sensorml.com/ont/swe/property/Height
+:Height rdf:type owl:NamedIndividual ,
+                 <http://www.w3.org/ns/sosa/ObservableProperty> ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Height (or elevation, or altitude) is a measure of a vertical distance with respect to a certain vertical datum (e.g the surface of the earth)." .
 
 
-###  http://sensorml.com/ont/core/property/HeightAboveAverageTerrain
-<http://sensorml.com/ont/core/property/HeightAboveAverageTerrain> rdf:type owl:NamedIndividual ,
-                                                                           <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                                  rdfs:seeAlso <https://en.wikipedia.org/wiki/Height_above_average_terrain> ,
-                                                                               <https://www.fcc.gov/media/radio/haat-calculator> ;
-                                                                  <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Height> ;
-                                                                  <http://www.w3.org/2004/02/skos/core#definition> """Height above average terrain (HAAT) is a height measured with respect to the surrounding landscape (the resolution of the terrain used for the calculation is usually around 1km).
+###  http://sensorml.com/ont/swe/property/HeightAboveAverageTerrain
+:HeightAboveAverageTerrain rdf:type owl:NamedIndividual ,
+                                    <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                           rdfs:seeAlso <https://en.wikipedia.org/wiki/Height_above_average_terrain> ,
+                                        <https://www.fcc.gov/media/radio/haat-calculator> ;
+                           <http://www.w3.org/2004/02/skos/core#broader> :Height ;
+                           <http://www.w3.org/2004/02/skos/core#definition> """Height above average terrain (HAAT) is a height measured with respect to the surrounding landscape (the resolution of the terrain used for the calculation is usually around 1km).
 
 It is often used in broadcast engineering as it is a better criteria than height-above-ground (AGL) for determining the range of brodcasts emitted by an antenna.""" .
 
 
-###  http://sensorml.com/ont/core/property/HeightAboveEllipsoid
-<http://sensorml.com/ont/core/property/HeightAboveEllipsoid> rdf:type owl:NamedIndividual ,
-                                                                      <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                             rdfs:seeAlso <https://en.wikipedia.org/wiki/Reference_ellipsoid> ,
-                                                                          <https://www.esri.com/news/arcuser/0703/geoid1of3.html> ;
-                                                             <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Height> ;
-                                                             <http://www.w3.org/2004/02/skos/core#definition> "Height (or elevation, or altitude) above the ellipsoid (also called ellipsoidal height) is the measure of a vertical distance above a mathematical model that approximates the shape of the earth with a reference ellipsoid. The most common one is the WGS84 ellipsoid used by the GPS system." ;
-                                                             <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/def/axis-name/EPSG/0/9903> .
+###  http://sensorml.com/ont/swe/property/HeightAboveEllipsoid
+:HeightAboveEllipsoid rdf:type owl:NamedIndividual ,
+                               <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                      rdfs:seeAlso <https://en.wikipedia.org/wiki/Reference_ellipsoid> ,
+                                   <https://www.esri.com/news/arcuser/0703/geoid1of3.html> ;
+                      <http://www.w3.org/2004/02/skos/core#broader> :Height ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "Height (or elevation, or altitude) above the ellipsoid (also called ellipsoidal height) is the measure of a vertical distance above a mathematical model that approximates the shape of the earth with a reference ellipsoid. The most common one is the WGS84 ellipsoid used by the GPS system." ;
+                      <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/def/axis-name/EPSG/0/9903> .
 
 
-###  http://sensorml.com/ont/core/property/HeightAboveGround
-<http://sensorml.com/ont/core/property/HeightAboveGround> rdf:type owl:NamedIndividual ,
-                                                                   <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                          rdfs:seeAlso <https://en.wikipedia.org/wiki/Height_above_ground_level> ;
-                                                          <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Height> ;
-                                                          <http://www.w3.org/2004/02/skos/core#definition> """Height above ground level (AGL) is a height measured with respect to the underlying ground surface.
+###  http://sensorml.com/ont/swe/property/HeightAboveGround
+:HeightAboveGround rdf:type owl:NamedIndividual ,
+                            <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                   rdfs:seeAlso <https://en.wikipedia.org/wiki/Height_above_ground_level> ;
+                   <http://www.w3.org/2004/02/skos/core#broader> :Height ;
+                   <http://www.w3.org/2004/02/skos/core#definition> """Height above ground level (AGL) is a height measured with respect to the underlying ground surface.
 
 Its use is common in aviation, atmospheric sciences and broadcasting.""" .
 
 
-###  http://sensorml.com/ont/core/property/HeightAboveMSL
-<http://sensorml.com/ont/core/property/HeightAboveMSL> rdf:type owl:NamedIndividual ,
-                                                                <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                       rdfs:seeAlso <https://en.wikipedia.org/wiki/Geoid> ,
-                                                                    <https://en.wikipedia.org/wiki/Height_above_sea_level> ,
-                                                                    <https://www.esri.com/news/arcuser/0703/geoid1of3.html> ;
-                                                       <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Height> ;
-                                                       <http://www.w3.org/2004/02/skos/core#definition> """Height (or elevation, or altitude) above mean sea level (also called orthometric height) is the measure of a vertical distance above an imaginary surface called the geoid, which is determined by the earth's gravity and approximated by the mean sea level (MSL).
+###  http://sensorml.com/ont/swe/property/HeightAboveMSL
+:HeightAboveMSL rdf:type owl:NamedIndividual ,
+                         <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                rdfs:seeAlso <https://en.wikipedia.org/wiki/Geoid> ,
+                             <https://en.wikipedia.org/wiki/Height_above_sea_level> ,
+                             <https://www.esri.com/news/arcuser/0703/geoid1of3.html> ;
+                <http://www.w3.org/2004/02/skos/core#broader> :Height ;
+                <http://www.w3.org/2004/02/skos/core#definition> """Height (or elevation, or altitude) above mean sea level (also called orthometric height) is the measure of a vertical distance above an imaginary surface called the geoid, which is determined by the earth's gravity and approximated by the mean sea level (MSL).
 
 Spherical harmonics are often used to approximate the shape of the geoid. The current best such set of spherical harmonic coefficients is EGM96 (Earth Gravity Model 1996).""" ;
-                                                       <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/def/axis-name/EPSG/0/9904> .
+                <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/def/axis-name/EPSG/0/9904> .
 
 
-###  http://sensorml.com/ont/core/property/Histogram
-<http://sensorml.com/ont/core/property/Histogram> rdf:type owl:NamedIndividual ,
-                                                           <http://sensorml.com/ont/core/property/DataStructure> ;
-                                                  rdfs:seeAlso "https://en.wikipedia.org/wiki/Histogram" ;
-                                                  <http://www.w3.org/2004/02/skos/core#definition> """A histogram is an approximate representation of the distribution of numerical or categorical data. To construct a histogram, one divides the entire range of possible values of a variable into a series of intervals (called bins) and then counts how many values fall into each interval. The bins are usually specified as consecutive, non-overlapping intervals, and often (but not required to be) of equal size.
+###  http://sensorml.com/ont/swe/property/Histogram
+:Histogram rdf:type owl:NamedIndividual ,
+                    :DataStructure ;
+           rdfs:seeAlso "https://en.wikipedia.org/wiki/Histogram" ;
+           <http://www.w3.org/2004/02/skos/core#definition> """A histogram is an approximate representation of the distribution of numerical or categorical data. To construct a histogram, one divides the entire range of possible values of a variable into a series of intervals (called bins) and then counts how many values fall into each interval. The bins are usually specified as consecutive, non-overlapping intervals, and often (but not required to be) of equal size.
 
 A histogram may also be normalized to display \"relative\" frequencies. It then shows the proportion of cases that fall into each of several categories, with the sum of the heights equaling 1. Bins may also be sorted by frequency.""" .
 
 
-###  http://sensorml.com/ont/core/property/ImpulseResponse
-<http://sensorml.com/ont/core/property/ImpulseResponse> rdf:type owl:NamedIndividual ,
-                                                                 <http://sensorml.com/ont/core/property/ResponseCurve> ;
-                                                        <http://www.w3.org/2004/02/skos/core#definition> "The impulse response, or impulse response function (IRF), of a dynamic system is its output when presented with a brief input signal, called an impulse." .
+###  http://sensorml.com/ont/swe/property/ImpulseResponse
+:ImpulseResponse rdf:type owl:NamedIndividual ,
+                          :ResponseCurve ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "The impulse response, or impulse response function (IRF), of a dynamic system is its output when presented with a brief input signal, called an impulse." .
 
 
-###  http://sensorml.com/ont/core/property/IntegrationTime
-<http://sensorml.com/ont/core/property/IntegrationTime> rdf:type owl:NamedIndividual ,
-                                                                 <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
-                                                        <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Duration> ;
-                                                        <http://www.w3.org/2004/02/skos/core#definition> """The length of time during which a noisy signal is averaged in order to improve the signal to noise ratio in an electronic system.
+###  http://sensorml.com/ont/swe/property/IntegrationTime
+:IntegrationTime rdf:type owl:NamedIndividual ,
+                          <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
+                 <http://www.w3.org/2004/02/skos/core#broader> :Duration ;
+                 <http://www.w3.org/2004/02/skos/core#definition> """The length of time during which a noisy signal is averaged in order to improve the signal to noise ratio in an electronic system.
 
 More specifically, for digital sensors, it is the length of time during which the signal generated by sensing elements is oversampled and averaged by the sensor's internal electronics before generating the final output value. For electro-optical sensors, it is also called Exposure Time.""" .
 
 
-###  http://sensorml.com/ont/core/property/IntendedApplication
-<http://sensorml.com/ont/core/property/IntendedApplication> rdf:type owl:NamedIndividual ,
-                                                                     <http://sensorml.com/ont/core/property/Classifier> .
+###  http://sensorml.com/ont/swe/property/IntendedApplication
+:IntendedApplication rdf:type owl:NamedIndividual ,
+                              :Classifier .
 
 
-###  http://sensorml.com/ont/core/property/Irradiance
-<http://sensorml.com/ont/core/property/Irradiance> rdf:type owl:NamedIndividual ,
-                                                            <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                   rdfs:seeAlso <https://en.wikipedia.org/wiki/Irradiance> ;
-                                                   <http://www.w3.org/2004/02/skos/core#definition> "Irradiance, radiant emittance, and radiant exitance are measures of the radiant flux (power) per unit area of electromagnetic radiation at a surface. \"Irradiance\" is used when the electromagnetic radiation is incident on the surface. \"Radiant exitance\" or \"radiant emittance\" is used when the radiation is emerging from the surface. The SI units for all of these quantities are watts per square meter (W/m2). All of these quantities characterize the total amount of radiation present, at all frequencies." ;
-                                                   <http://www.w3.org/2004/02/skos/core#related> <http://sensorml.com/ont/core/property/SpectralIrradiance> .
+###  http://sensorml.com/ont/swe/property/Irradiance
+:Irradiance rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/ns/sosa/ObservableProperty> ;
+            rdfs:seeAlso <https://en.wikipedia.org/wiki/Irradiance> ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Irradiance, radiant emittance, and radiant exitance are measures of the radiant flux (power) per unit area of electromagnetic radiation at a surface. \"Irradiance\" is used when the electromagnetic radiation is incident on the surface. \"Radiant exitance\" or \"radiant emittance\" is used when the radiation is emerging from the surface. The SI units for all of these quantities are watts per square meter (W/m2). All of these quantities characterize the total amount of radiation present, at all frequencies." ;
+            <http://www.w3.org/2004/02/skos/core#related> :SpectralIrradiance .
 
 
-###  http://sensorml.com/ont/core/property/Latitude
-<http://sensorml.com/ont/core/property/Latitude> rdf:type owl:NamedIndividual ,
-                                                          <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                 rdfs:seeAlso <https://en.wikipedia.org/wiki/Latitude> ;
-                                                 <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
-                                                 <http://www.w3.org/2004/02/skos/core#definition> "Latitude is a geographic coordinate that specifies the north–south position of a point on the Earth's surface, or the surface of a celestial body. Latitude is an angle which ranges from 0° at the Equator to ±90° at the poles." .
+###  http://sensorml.com/ont/swe/property/Latitude
+:Latitude rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/ns/sosa/ObservableProperty> ;
+          rdfs:seeAlso <https://en.wikipedia.org/wiki/Latitude> ;
+          <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Latitude is a geographic coordinate that specifies the north–south position of a point on the Earth's surface, or the surface of a celestial body. Latitude is an angle which ranges from 0° at the Equator to ±90° at the poles." .
 
 
-###  http://sensorml.com/ont/core/property/LensAperture
-<http://sensorml.com/ont/core/property/LensAperture> rdf:type owl:NamedIndividual ,
-                                                              <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
-                                                     rdfs:label "The aperture of an optical system expressed as a ratio between the lens focal length and the effective aperture diameter (also called f-number of f-ratio)." ;
-                                                     rdfs:seeAlso <https://en.wikipedia.org/wiki/Aperture> .
+###  http://sensorml.com/ont/swe/property/LensAperture
+:LensAperture rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
+              rdfs:label "The aperture of an optical system expressed as a ratio between the lens focal length and the effective aperture diameter (also called f-number of f-ratio)." ;
+              rdfs:seeAlso <https://en.wikipedia.org/wiki/Aperture> .
 
 
-###  http://sensorml.com/ont/core/property/LinearDynamicRange
-<http://sensorml.com/ont/core/property/LinearDynamicRange> rdf:type owl:NamedIndividual ,
-                                                                    <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
-                                                           rdfs:seeAlso "https://en.wikipedia.org/wiki/Linear_range" ;
-                                                           <http://www.w3.org/2004/02/skos/core#definition> """The linear dynamic range of a transducer is a measure of the difference between the highest and lowest input signal to which the transducer responds linearly.
+###  http://sensorml.com/ont/swe/property/LinearDynamicRange
+:LinearDynamicRange rdf:type owl:NamedIndividual ,
+                             <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
+                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Linear_range" ;
+                    <http://www.w3.org/2004/02/skos/core#definition> """The linear dynamic range of a transducer is a measure of the difference between the highest and lowest input signal to which the transducer responds linearly.
 
 It is often expressed as a range of minimum/maximum measurable values or simply as the ratio between these two values (often measured in dB).""" .
 
 
-###  http://sensorml.com/ont/core/property/Location
-<http://sensorml.com/ont/core/property/Location> rdf:type owl:NamedIndividual ,
-                                                          <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                 <http://www.w3.org/2004/02/skos/core#definition> """Location of a point in space (not necessarily Euclidean space) with respect to a frame of reference.
+###  http://sensorml.com/ont/swe/property/Location
+:Location rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/ns/sosa/ObservableProperty> ;
+          <http://www.w3.org/2004/02/skos/core#definition> """Location of a point in space (not necessarily Euclidean space) with respect to a frame of reference.
 
 Location is often called 'position' in physics but in the context of the SensorWeb we reserve the term Position for the full pose of a rigid body in space, including both Location and Orientation.""" .
 
 
-###  http://sensorml.com/ont/core/property/LocationVector
-<http://sensorml.com/ont/core/property/LocationVector> rdf:type owl:NamedIndividual ,
-                                                                <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                       <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Location> ;
-                                                       <http://www.w3.org/2004/02/skos/core#definition> """A location vector is a coordinate tuple representing the location of a point P in space with respect to a well defined coordinate reference system.
+###  http://sensorml.com/ont/swe/property/LocationVector
+:LocationVector rdf:type owl:NamedIndividual ,
+                         <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                <http://www.w3.org/2004/02/skos/core#broader> :Location ;
+                <http://www.w3.org/2004/02/skos/core#definition> """A location vector is a coordinate tuple representing the location of a point P in space with respect to a well defined coordinate reference system.
 
 Most commonly used coordinate reference systems are Cartesian reference frames (Euclidean space) and geographic coordinate systems.""" .
 
 
-###  http://sensorml.com/ont/core/property/LongName
-<http://sensorml.com/ont/core/property/LongName> rdf:type owl:NamedIndividual ,
-                                                          <http://sensorml.com/ont/core/property/Identifier> ;
-                                                 <http://www.w3.org/2004/02/skos/core#definition> "The full human-readable name of the system or object." .
+###  http://sensorml.com/ont/swe/property/LongName
+:LongName rdf:type owl:NamedIndividual ,
+                   :Identifier ;
+          <http://www.w3.org/2004/02/skos/core#definition> "The full human-readable name of the system or object." .
 
 
-###  http://sensorml.com/ont/core/property/Longitude
-<http://sensorml.com/ont/core/property/Longitude> rdf:type owl:NamedIndividual ,
-                                                           <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                  rdfs:seeAlso <https://en.wikipedia.org/wiki/Longitude> ;
-                                                  <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
-                                                  <http://www.w3.org/2004/02/skos/core#definition> "Longitude is a geographic coordinate that specifies the east–west position of a point on the Earth's surface, or the surface of a celestial body. It is defined as the angle between the plane that passes through the Prime Meridian and a plane through both poles and the location in question. Its value ranges from 0° at the Prime Meridian to +180° eastward and -180° westward." ;
-                                                  <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/def/axis-name/EPSG/0/9902> .
+###  http://sensorml.com/ont/swe/property/Longitude
+:Longitude rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/ns/sosa/ObservableProperty> ;
+           rdfs:seeAlso <https://en.wikipedia.org/wiki/Longitude> ;
+           <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Longitude is a geographic coordinate that specifies the east–west position of a point on the Earth's surface, or the surface of a celestial body. It is defined as the angle between the plane that passes through the Prime Meridian and a plane through both poles and the location in question. Its value ranges from 0° at the Prime Meridian to +180° eastward and -180° westward." ;
+           <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/def/axis-name/EPSG/0/9902> .
 
 
-###  http://sensorml.com/ont/core/property/MagneticBearing
-<http://sensorml.com/ont/core/property/MagneticBearing> rdf:type owl:NamedIndividual ,
-                                                                 <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                        rdfs:seeAlso <https://en.wikipedia.org/wiki/Bearing_(navigation)> ;
-                                                        <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
-                                                        <http://www.w3.org/2004/02/skos/core#exactMatch> "Magnetic bearing is the horizontal angle between the direction towards an object from the point of view of an observer and the direction of magnetic north." .
+###  http://sensorml.com/ont/swe/property/MagneticBearing
+:MagneticBearing rdf:type owl:NamedIndividual ,
+                          <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                 rdfs:seeAlso <https://en.wikipedia.org/wiki/Bearing_(navigation)> ;
+                 <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+                 <http://www.w3.org/2004/02/skos/core#exactMatch> "Magnetic bearing is the horizontal angle between the direction towards an object from the point of view of an observer and the direction of magnetic north." .
 
 
-###  http://sensorml.com/ont/core/property/MagneticHeading
-<http://sensorml.com/ont/core/property/MagneticHeading> rdf:type owl:NamedIndividual ,
-                                                                 <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                        rdfs:seeAlso "https://en.wikipedia.org/wiki/Course_(navigation)" ;
-                                                        <http://www.w3.org/2004/02/skos/core#broader> <http://dbpedia.org/resource/Heading_(navigation)> ,
-                                                                                                      <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
-                                                        <http://www.w3.org/2004/02/skos/core#definition> """Angle formed between an object's or vehicle's heading direction and the magnetic north.
+###  http://sensorml.com/ont/swe/property/MagneticHeading
+:MagneticHeading rdf:type owl:NamedIndividual ,
+                          <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                 rdfs:seeAlso "https://en.wikipedia.org/wiki/Course_(navigation)" ;
+                 <http://www.w3.org/2004/02/skos/core#broader> <http://dbpedia.org/resource/Heading_(navigation)> ,
+                                                               <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+                 <http://www.w3.org/2004/02/skos/core#definition> """Angle formed between an object's or vehicle's heading direction and the magnetic north.
 
 The difference between true and magnetic heading angles is called magnetic variation and is due to the magnetic north pole and geographic north pole being hundreds of miles apart, as well as other local variations of the earth magnetic field.""" .
 
 
-###  http://sensorml.com/ont/core/property/Manufacturer
-<http://sensorml.com/ont/core/property/Manufacturer> rdf:type owl:NamedIndividual ,
-                                                              <http://sensorml.com/ont/core/property/Classifier> ;
-                                                     <http://www.w3.org/2004/02/skos/core#definition> "The organization responsible for building the system." .
+###  http://sensorml.com/ont/swe/property/Manufacturer
+:Manufacturer rdf:type owl:NamedIndividual ,
+                       :Classifier ;
+              <http://www.w3.org/2004/02/skos/core#definition> "The organization responsible for building the system." .
 
 
-###  http://sensorml.com/ont/core/property/Material
-<http://sensorml.com/ont/core/property/Material> rdf:type owl:NamedIndividual ,
-                                                          <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
-                                                 <http://www.w3.org/2004/02/skos/core#definition> "The main material an object is made of." .
+###  http://sensorml.com/ont/swe/property/Material
+:Material rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
+          <http://www.w3.org/2004/02/skos/core#definition> "The main material an object is made of." .
 
 
-###  http://sensorml.com/ont/core/property/ModelNumber
-<http://sensorml.com/ont/core/property/ModelNumber> rdf:type owl:NamedIndividual ,
-                                                             <http://sensorml.com/ont/core/property/Identifier> ;
-                                                    <http://www.w3.org/2004/02/skos/core#definition> "An alpha-numeric designation identifying a particular model and version of equipment." .
+###  http://sensorml.com/ont/swe/property/ModelNumber
+:ModelNumber rdf:type owl:NamedIndividual ,
+                      :Identifier ;
+             <http://www.w3.org/2004/02/skos/core#definition> "An alpha-numeric designation identifying a particular model and version of equipment." .
 
 
-###  http://sensorml.com/ont/core/property/NetworkID
-<http://sensorml.com/ont/core/property/NetworkID> rdf:type owl:NamedIndividual ,
-                                                           <http://sensorml.com/ont/core/property/Classifier> ;
-                                                  rdfs:comment "The identifier of the Sensor Network that this sensor is a part of." .
+###  http://sensorml.com/ont/swe/property/NetworkID
+:NetworkID rdf:type owl:NamedIndividual ,
+                    :Classifier ;
+           rdfs:comment "The identifier of the Sensor Network that this sensor is a part of." .
 
 
-###  http://sensorml.com/ont/core/property/Offset
-<http://sensorml.com/ont/core/property/Offset> rdf:type owl:NamedIndividual ,
-                                                        <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                               rdfs:seeAlso <http://qudt.org/vocab/quantitykind/Gain> ,
-                                                            <http://www.w3.org/ns/ssn/systems/Sensitivity> ;
-                                               <http://www.w3.org/2004/02/skos/core#definition> "Offset (or bias) is the continuous output signal output by a transducer when no input signal (i.e. no external stimulus for a detector) is applied to it. It is often provided in calibration tables along with the gain or sensitivity of a transducer." .
+###  http://sensorml.com/ont/swe/property/Offset
+:Offset rdf:type owl:NamedIndividual ,
+                 <http://www.w3.org/ns/sosa/ObservableProperty> ;
+        rdfs:seeAlso <http://qudt.org/vocab/quantitykind/Gain> ,
+                     <http://www.w3.org/ns/ssn/systems/Sensitivity> ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Offset (or bias) is the continuous output signal output by a transducer when no input signal (i.e. no external stimulus for a detector) is applied to it. It is often provided in calibration tables along with the gain or sensitivity of a transducer." .
 
 
-###  http://sensorml.com/ont/core/property/Operator
-<http://sensorml.com/ont/core/property/Operator> rdf:type owl:NamedIndividual ,
-                                                          <http://sensorml.com/ont/core/property/Classifier> ;
-                                                 <http://www.w3.org/2004/02/skos/core#definition> "The individual or organization responsible for operating the system." .
+###  http://sensorml.com/ont/swe/property/Operator
+:Operator rdf:type owl:NamedIndividual ,
+                   :Classifier ;
+          <http://www.w3.org/2004/02/skos/core#definition> "The individual or organization responsible for operating the system." .
 
 
-###  http://sensorml.com/ont/core/property/Orientation
-<http://sensorml.com/ont/core/property/Orientation> rdf:type owl:NamedIndividual ,
-                                                             <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                    rdfs:seeAlso <https://en.wikipedia.org/wiki/Orientation_(geometry)> ;
-                                                    <http://www.w3.org/2004/02/skos/core#definition> "Orientation (or attitude) describes the angular position of a rigid body with respect to a frame of reference. The frame of reference and the frame attached to the body should both be formally defined." ;
-                                                    <http://www.w3.org/2004/02/skos/core#related> <http://qudt.org/vocab/quantitykind/Angle> .
+###  http://sensorml.com/ont/swe/property/Orientation
+:Orientation rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/ns/sosa/ObservableProperty> ;
+             rdfs:seeAlso <https://en.wikipedia.org/wiki/Orientation_(geometry)> ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Orientation (or attitude) describes the angular position of a rigid body with respect to a frame of reference. The frame of reference and the frame attached to the body should both be formally defined." ;
+             <http://www.w3.org/2004/02/skos/core#related> <http://qudt.org/vocab/quantitykind/Angle> .
 
 
-###  http://sensorml.com/ont/core/property/PanAngle
-<http://sensorml.com/ont/core/property/PanAngle> rdf:type owl:NamedIndividual ,
-                                                          <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                 rdfs:seeAlso "https://en.wikipedia.org/wiki/Pan-tilt-zoom_camera" ;
-                                                 <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
-                                                 <http://www.w3.org/2004/02/skos/core#definition> """The pan angle quantifies the amount of rotation of a video or still camera about a reference vertical axis (often the local vertical axis when the PTZ camera is mounted level). It is the angle between the  direction that the optical axis of the camera is pointing at and a reference direction (provided by the reference frame).
+###  http://sensorml.com/ont/swe/property/PanAngle
+:PanAngle rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/ns/sosa/ObservableProperty> ;
+          rdfs:seeAlso "https://en.wikipedia.org/wiki/Pan-tilt-zoom_camera" ;
+          <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+          <http://www.w3.org/2004/02/skos/core#definition> """The pan angle quantifies the amount of rotation of a video or still camera about a reference vertical axis (often the local vertical axis when the PTZ camera is mounted level). It is the angle between the  direction that the optical axis of the camera is pointing at and a reference direction (provided by the reference frame).
 
 In the resulting image, a panning motion makes the view seemingly translate along the image horizontal axis.""" .
 
 
-###  http://sensorml.com/ont/core/property/PitchAngle
-<http://sensorml.com/ont/core/property/PitchAngle> rdf:type owl:NamedIndividual ,
-                                                            <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Aircraft_principal_axes" ,
-                                                                "https://en.wikipedia.org/wiki/Ship_motions#Rotational_motions" ;
-                                                   <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
-                                                   <http://www.w3.org/2004/02/skos/core#definition> "The pitch angle is one of the Tait-Bryan angles (Euler angles). It quantifies the rotation around the lateral axis, causing the nose of the object to point up or down from the local horizontal plane." .
+###  http://sensorml.com/ont/swe/property/PitchAngle
+:PitchAngle rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/ns/sosa/ObservableProperty> ;
+            rdfs:seeAlso "https://en.wikipedia.org/wiki/Aircraft_principal_axes" ,
+                         "https://en.wikipedia.org/wiki/Ship_motions#Rotational_motions" ;
+            <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+            <http://www.w3.org/2004/02/skos/core#definition> "The pitch angle is one of the Tait-Bryan angles (Euler angles). It quantifies the rotation around the lateral axis, causing the nose of the object to point up or down from the local horizontal plane." .
 
 
-###  http://sensorml.com/ont/core/property/PlatformType
-<http://sensorml.com/ont/core/property/PlatformType> rdf:type owl:NamedIndividual ,
-                                                              <http://sensorml.com/ont/core/property/Classifier> ;
-                                                     <http://www.w3.org/2004/02/skos/core#definition> "Type of platform, usually further qualified by an application specific code space." ;
-                                                     <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/def/property/OGC/0/PlatformType> .
+###  http://sensorml.com/ont/swe/property/PlatformType
+:PlatformType rdf:type owl:NamedIndividual ,
+                       :Classifier ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Type of platform, usually further qualified by an application specific code space." ;
+              <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.opengis.net/def/property/OGC/0/PlatformType> .
 
 
-###  http://sensorml.com/ont/core/property/Position
-<http://sensorml.com/ont/core/property/Position> rdf:type owl:NamedIndividual ,
-                                                          <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                 <http://www.w3.org/2004/02/skos/core#definition> "Position refers to the complete pose of a rigid body (object) in space, including both Location and Orientation." ;
-                                                 <http://www.w3.org/2004/02/skos/core#related> <http://sensorml.com/ont/core/property/Location> ,
-                                                                                               <http://sensorml.com/ont/core/property/Orientation> .
+###  http://sensorml.com/ont/swe/property/Position
+:Position rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/ns/sosa/ObservableProperty> ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Position refers to the complete pose of a rigid body (object) in space, including both Location and Orientation." ;
+          <http://www.w3.org/2004/02/skos/core#related> :Location ,
+                                                        :Orientation .
 
 
-###  http://sensorml.com/ont/core/property/PowerSpectralDensity
-<http://sensorml.com/ont/core/property/PowerSpectralDensity> rdf:type owl:NamedIndividual ,
-                                                                      <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                             <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/PowerSpectrum> ,
-                                                                                                           <http://sensorml.com/ont/core/property/SpectralDensity> ;
-                                                             <http://www.w3.org/2004/02/skos/core#definition> "Power Spectral Density is a normalized measure of a signal's power content versus frequency or wavelength. It is a special case of Spectral Density and thus each spectral value is normalized and expressed per unit frequency or wavelength." .
+###  http://sensorml.com/ont/swe/property/PowerSpectralDensity
+:PowerSpectralDensity rdf:type owl:NamedIndividual ,
+                               <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                      <http://www.w3.org/2004/02/skos/core#broader> :PowerSpectrum ,
+                                                                    :SpectralDensity ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "Power Spectral Density is a normalized measure of a signal's power content versus frequency or wavelength. It is a special case of Spectral Density and thus each spectral value is normalized and expressed per unit frequency or wavelength." .
 
 
-###  http://sensorml.com/ont/core/property/PowerSpectrum
-<http://sensorml.com/ont/core/property/PowerSpectrum> rdf:type owl:NamedIndividual ,
-                                                               <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                      <http://www.w3.org/2004/02/skos/core#definition> """The Power Spectrum is a measure of a signal's power content versus frequency or wavelength. The most common way of generating a power spectrum is by using a discrete Fourier transform, but other techniques such as the maximum entropy method can also be used.
+###  http://sensorml.com/ont/swe/property/PowerSpectrum
+:PowerSpectrum rdf:type owl:NamedIndividual ,
+                        <http://www.w3.org/ns/sosa/ObservableProperty> ;
+               <http://www.w3.org/2004/02/skos/core#definition> """The Power Spectrum is a measure of a signal's power content versus frequency or wavelength. The most common way of generating a power spectrum is by using a discrete Fourier transform, but other techniques such as the maximum entropy method can also be used.
 
 On the contrary to Power Spectral Density, a Power Spectrum is not normalized and thus expressed directly in units of power or power level (dB).""" ;
-                                                      <http://www.w3.org/2004/02/skos/core#related> <http://sensorml.com/ont/core/property/PowerSpectralDensity> .
+               <http://www.w3.org/2004/02/skos/core#related> :PowerSpectralDensity .
 
 
-###  http://sensorml.com/ont/core/property/ProfileBin
-<http://sensorml.com/ont/core/property/ProfileBin> rdf:type owl:NamedIndividual ,
-                                                            <http://sensorml.com/ont/core/property/DataStructure> .
+###  http://sensorml.com/ont/swe/property/ProfileBin
+:ProfileBin rdf:type owl:NamedIndividual ,
+                     :DataStructure .
 
 
-###  http://sensorml.com/ont/core/property/ProfileData
-<http://sensorml.com/ont/core/property/ProfileData> rdf:type owl:NamedIndividual ,
-                                                             <http://sensorml.com/ont/core/property/DataStructure> .
+###  http://sensorml.com/ont/swe/property/ProfileData
+:ProfileData rdf:type owl:NamedIndividual ,
+                      :DataStructure .
 
 
-###  http://sensorml.com/ont/core/property/ProfileGeometry
-<http://sensorml.com/ont/core/property/ProfileGeometry> rdf:type owl:NamedIndividual ,
-                                                                 <http://sensorml.com/ont/core/property/DataStructure> ,
-                                                                 <http://www.w3.org/ns/sosa/Sample> .
+###  http://sensorml.com/ont/swe/property/ProfileGeometry
+:ProfileGeometry rdf:type owl:NamedIndividual ,
+                          :DataStructure ,
+                          <http://www.w3.org/ns/sosa/Sample> .
 
 
-###  http://sensorml.com/ont/core/property/ProfileLocation
-<http://sensorml.com/ont/core/property/ProfileLocation> rdf:type owl:NamedIndividual ,
-                                                                 <http://www.w3.org/ns/sosa/ObservableProperty> .
+###  http://sensorml.com/ont/swe/property/ProfileLocation
+:ProfileLocation rdf:type owl:NamedIndividual ,
+                          <http://www.w3.org/ns/sosa/ObservableProperty> .
 
 
-###  http://sensorml.com/ont/core/property/QuantizationError
-<http://sensorml.com/ont/core/property/QuantizationError> rdf:type owl:NamedIndividual ,
-                                                                   <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
-                                                          rdfs:seeAlso "https://en.wikipedia.org/wiki/Quantization_(signal_processing)#Quantization_error_models" ;
-                                                          <http://www.w3.org/2004/02/skos/core#definition> """The quantization error is the difference between an input value (often an analog signal) and its quantized value (often a digital signal). 
+###  http://sensorml.com/ont/swe/property/QuantizationError
+:QuantizationError rdf:type owl:NamedIndividual ,
+                            <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Quantization_(signal_processing)#Quantization_error_models" ;
+                   <http://www.w3.org/2004/02/skos/core#definition> """The quantization error is the difference between an input value (often an analog signal) and its quantized value (often a digital signal). 
 
 This is an important characteristic of any analog to digital converter (ADC) as quantization is an integral part of the conversion process.""" .
 
 
-###  http://sensorml.com/ont/core/property/RasterImage
-<http://sensorml.com/ont/core/property/RasterImage> rdf:type owl:NamedIndividual ,
-                                                             <http://sensorml.com/ont/core/property/DataStructure> ;
-                                                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Raster_graphics" ;
-                                                    <http://www.w3.org/2004/02/skos/core#definition> """A raster image (or raster graphics) is a dot matrix data structure that represents a generally rectangular grid of pixels (points of color), viewable via a monitor, or other display medium.
+###  http://sensorml.com/ont/swe/property/RadialDistance
+:RadialDistance rdf:type owl:NamedIndividual ;
+                <http://www.w3.org/2004/02/skos/core#exactMatch> <http://qudt.org/vocab/quantitykind/RadialDistance> .
+
+
+###  http://sensorml.com/ont/swe/property/RasterImage
+:RasterImage rdf:type owl:NamedIndividual ,
+                      :DataStructure ;
+             rdfs:seeAlso "https://en.wikipedia.org/wiki/Raster_graphics" ;
+             <http://www.w3.org/2004/02/skos/core#definition> """A raster image (or raster graphics) is a dot matrix data structure that represents a generally rectangular grid of pixels (points of color), viewable via a monitor, or other display medium.
 
 Raster images are stored in image files with varying formats.""" ;
-                                                    <http://www.w3.org/2004/02/skos/core#exactMatch> <http://dbpedia.org/resource/Raster_image> .
+             <http://www.w3.org/2004/02/skos/core#exactMatch> <http://dbpedia.org/resource/Raster_image> .
 
 
-###  http://sensorml.com/ont/core/property/RedChannel
-<http://sensorml.com/ont/core/property/RedChannel> rdf:type owl:NamedIndividual ,
-                                                            <http://sensorml.com/ont/core/property/DataProperty> ;
-                                                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Channel_(digital_image)#RGB_images" ;
-                                                   <http://www.w3.org/2004/02/skos/core#definition> """The red channel of an RGB or BGR image. if not specified otherwise, this channel usually contains data representing an amount of red visible light.
+###  http://sensorml.com/ont/swe/property/RedChannel
+:RedChannel rdf:type owl:NamedIndividual ,
+                     :DataProperty ;
+            rdfs:seeAlso "https://en.wikipedia.org/wiki/Channel_(digital_image)#RGB_images" ;
+            <http://www.w3.org/2004/02/skos/core#definition> """The red channel of an RGB or BGR image. if not specified otherwise, this channel usually contains data representing an amount of red visible light.
 
 When the red channel is used for another purpose, the actual measured quantity should be documented separately.""" ;
-                                                   <http://www.w3.org/2004/02/skos/core#related> :Red_Band .
+            <http://www.w3.org/2004/02/skos/core#related> :Red_Band .
 
 
-###  http://sensorml.com/ont/core/property/RelativeAccuracy
-<http://sensorml.com/ont/core/property/RelativeAccuracy> rdf:type owl:NamedIndividual ,
-                                                                  <http://www.w3.org/ns/ssn/systems/Accuracy> ;
-                                                         rdfs:seeAlso "https://en.wikipedia.org/wiki/Accuracy_and_precision" ;
-                                                         <http://www.w3.org/2004/02/skos/core#definition> """Relative accuracy (or relative error) is a description of how close a measured value is to the known true value on relative terms, that is relative to the size of the measured value itself.
+###  http://sensorml.com/ont/swe/property/RelativeAccuracy
+:RelativeAccuracy rdf:type owl:NamedIndividual ,
+                           <http://www.w3.org/ns/ssn/systems/Accuracy> ;
+                  rdfs:seeAlso "https://en.wikipedia.org/wiki/Accuracy_and_precision" ;
+                  <http://www.w3.org/2004/02/skos/core#definition> """Relative accuracy (or relative error) is a description of how close a measured value is to the known true value on relative terms, that is relative to the size of the measured value itself.
 
 Note: Accuracy is closeness of the measurements to a specific value, while precision is the closeness of the measurements to each other.""" .
 
 
-###  http://sensorml.com/ont/core/property/RelativeBearing
-<http://sensorml.com/ont/core/property/RelativeBearing> rdf:type owl:NamedIndividual ,
-                                                                 <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                        rdfs:seeAlso <https://en.wikipedia.org/wiki/Bearing_(navigation)> ;
-                                                        <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
-                                                        <http://www.w3.org/2004/02/skos/core#definition> "Relative bearing is the horizontal angle between the direction towards an object from the point of view of an observer and the observer's own heading/forward direction." .
+###  http://sensorml.com/ont/swe/property/RelativeBearing
+:RelativeBearing rdf:type owl:NamedIndividual ,
+                          <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                 rdfs:seeAlso <https://en.wikipedia.org/wiki/Bearing_(navigation)> ;
+                 <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Relative bearing is the horizontal angle between the direction towards an object from the point of view of an observer and the observer's own heading/forward direction." .
 
 
-###  http://sensorml.com/ont/core/property/ReportingFrequency
-<http://sensorml.com/ont/core/property/ReportingFrequency> rdf:type owl:NamedIndividual ,
-                                                                    <http://www.w3.org/ns/ssn/systems/Frequency> ;
-                                                           <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Frequency> ;
-                                                           <http://www.w3.org/2004/02/skos/core#definition> "The frequency at which a digital sensor or process outputs values. For sensors, this is different from the sampling frequency when oversampling is used." .
+###  http://sensorml.com/ont/swe/property/ReportingFrequency
+:ReportingFrequency rdf:type owl:NamedIndividual ,
+                             <http://www.w3.org/ns/ssn/systems/Frequency> ;
+                    <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Frequency> ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "The frequency at which a digital sensor or process outputs values. For sensors, this is different from the sampling frequency when oversampling is used." .
 
 
-###  http://sensorml.com/ont/core/property/RollAngle
-<http://sensorml.com/ont/core/property/RollAngle> rdf:type owl:NamedIndividual ,
-                                                           <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                  rdfs:seeAlso "https://en.wikipedia.org/wiki/Aircraft_principal_axes" ,
-                                                               "https://en.wikipedia.org/wiki/Ship_motions#Rotational_motions" ;
-                                                  <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
-                                                  <http://www.w3.org/2004/02/skos/core#definition> "The roll angle is one of the Tait-Bryan angles (Euler angles). It quantifies the rotation around the longitudinal axis, making the object tilt right or left." .
+###  http://sensorml.com/ont/swe/property/RollAngle
+:RollAngle rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/ns/sosa/ObservableProperty> ;
+           rdfs:seeAlso "https://en.wikipedia.org/wiki/Aircraft_principal_axes" ,
+                        "https://en.wikipedia.org/wiki/Ship_motions#Rotational_motions" ;
+           <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+           <http://www.w3.org/2004/02/skos/core#definition> "The roll angle is one of the Tait-Bryan angles (Euler angles). It quantifies the rotation around the longitudinal axis, making the object tilt right or left." .
 
 
-###  http://sensorml.com/ont/core/property/RotationAxisAngle
-<http://sensorml.com/ont/core/property/RotationAxisAngle> rdf:type owl:NamedIndividual ,
-                                                                   <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                          rdfs:seeAlso "https://en.wikipedia.org/wiki/Axis-angle_representation" ;
-                                                          <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Orientation> ;
-                                                          <http://www.w3.org/2004/02/skos/core#definition> "The axis–angle representation of a rotation parameterizes a rotation in a three-dimensional Euclidean space by two quantities: a unit vector e indicating the direction of an axis of rotation, and an angle θ describing the magnitude of the rotation about the axis. Both the rotation axis and the angle are represented by a single vector codirectional with the rotation axis whose length is the rotation angle θ." .
+###  http://sensorml.com/ont/swe/property/RotationAxisAngle
+:RotationAxisAngle rdf:type owl:NamedIndividual ,
+                            <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Axis-angle_representation" ;
+                   <http://www.w3.org/2004/02/skos/core#broader> :Orientation ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "The axis–angle representation of a rotation parameterizes a rotation in a three-dimensional Euclidean space by two quantities: a unit vector e indicating the direction of an axis of rotation, and an angle θ describing the magnitude of the rotation about the axis. Both the rotation axis and the angle are represented by a single vector codirectional with the rotation axis whose length is the rotation angle θ." .
 
 
-###  http://sensorml.com/ont/core/property/RotationMatrix
-<http://sensorml.com/ont/core/property/RotationMatrix> rdf:type owl:NamedIndividual ,
-                                                                <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                       rdfs:seeAlso "https://en.wikipedia.org/wiki/Rotation_matrix" ;
-                                                       <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Orientation> ;
-                                                       <http://www.w3.org/2004/02/skos/core#definition> "A rotation matrix is a matrix that is used to describe a rotation in Euclidean space." ;
-                                                       <http://www.w3.org/2004/02/skos/core#exactMatch> <http://dbpedia.org/page/Rotation_matrix> .
+###  http://sensorml.com/ont/swe/property/RotationMatrix
+:RotationMatrix rdf:type owl:NamedIndividual ,
+                         <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                rdfs:seeAlso "https://en.wikipedia.org/wiki/Rotation_matrix" ;
+                <http://www.w3.org/2004/02/skos/core#broader> :Orientation ;
+                <http://www.w3.org/2004/02/skos/core#definition> "A rotation matrix is a matrix that is used to describe a rotation in Euclidean space." ;
+                <http://www.w3.org/2004/02/skos/core#exactMatch> <http://dbpedia.org/page/Rotation_matrix> .
 
 
-###  http://sensorml.com/ont/core/property/RotationQuaternion
-<http://sensorml.com/ont/core/property/RotationQuaternion> rdf:type owl:NamedIndividual ,
-                                                                    <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                           rdfs:seeAlso "https://en.wikipedia.org/wiki/Quaternion" ,
-                                                                        "https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation" ;
-                                                           <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Orientation> ;
-                                                           <http://www.w3.org/2004/02/skos/core#definition> "Quaternion used to describe the orientation of a rigid body with respect to a frame of reference." .
+###  http://sensorml.com/ont/swe/property/RotationQuaternion
+:RotationQuaternion rdf:type owl:NamedIndividual ,
+                             <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Quaternion" ,
+                                 "https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation" ;
+                    <http://www.w3.org/2004/02/skos/core#broader> :Orientation ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Quaternion used to describe the orientation of a rigid body with respect to a frame of reference." .
 
 
-###  http://sensorml.com/ont/core/property/SNR
-<http://sensorml.com/ont/core/property/SNR> rdf:type owl:NamedIndividual ,
-                                                     <http://www.w3.org/ns/sosa/ObservableProperty> ,
-                                                     <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
-                                            rdfs:label "Signal-to-Noise Ratio" ;
-                                            <http://www.w3.org/2004/02/skos/core#altLabel> "SNR" ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Signal-to-noise ratio (abbreviated SNR) is a measure used in science and engineering that compares the level of a desired signal to the level of background noise. SNR is defined as the ratio of signal power to the noise power, often expressed in decibels." .
+###  http://sensorml.com/ont/swe/property/SNR
+:SNR rdf:type owl:NamedIndividual ,
+              <http://www.w3.org/ns/sosa/ObservableProperty> ,
+              <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
+     rdfs:label "Signal-to-Noise Ratio" ;
+     <http://www.w3.org/2004/02/skos/core#altLabel> "SNR" ;
+     <http://www.w3.org/2004/02/skos/core#definition> "Signal-to-noise ratio (abbreviated SNR) is a measure used in science and engineering that compares the level of a desired signal to the level of background noise. SNR is defined as the ratio of signal power to the noise power, often expressed in decibels." .
 
 
-###  http://sensorml.com/ont/core/property/SamplingFrequency
-<http://sensorml.com/ont/core/property/SamplingFrequency> rdf:type owl:NamedIndividual ,
-                                                                   <http://www.w3.org/ns/ssn/systems/Frequency> ;
-                                                          <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Frequency> ;
-                                                          <http://www.w3.org/2004/02/skos/core#definition> """The sampling frequency (or sampling rate) defines the number of samples per second (or per other temporal unit) taken from a continuous signal to make a discrete or digital signal. 
+###  http://sensorml.com/ont/swe/property/SamplingFrequency
+:SamplingFrequency rdf:type owl:NamedIndividual ,
+                            <http://www.w3.org/ns/ssn/systems/Frequency> ;
+                   <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Frequency> ;
+                   <http://www.w3.org/2004/02/skos/core#definition> """The sampling frequency (or sampling rate) defines the number of samples per second (or per other temporal unit) taken from a continuous signal to make a discrete or digital signal. 
 
 The Nyquist–Shannon sampling theorem (Nyquist principle) states that perfect reconstruction of a signal is possible when the sampling frequency is greater than twice the maximum frequency of the signal being sampled.""" .
 
 
-###  http://sensorml.com/ont/core/property/SensorType
-<http://sensorml.com/ont/core/property/SensorType> rdf:type owl:NamedIndividual ,
-                                                            <http://sensorml.com/ont/core/property/Classifier> ;
-                                                   <http://www.w3.org/2004/02/skos/core#definition> "Type of sensor, usually further qualified by an application specific code space." ;
-                                                   <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.nerc.ac.uk/collection/W06/current/CLSS0002/> ,
-                                                                                                    <http://www.opengis.net/def/property/OGC/0/SensorType> .
+###  http://sensorml.com/ont/swe/property/SensorType
+:SensorType rdf:type owl:NamedIndividual ,
+                     :Classifier ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Type of sensor, usually further qualified by an application specific code space." ;
+            <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.nerc.ac.uk/collection/W06/current/CLSS0002/> ,
+                                                             <http://www.opengis.net/def/property/OGC/0/SensorType> .
 
 
-###  http://sensorml.com/ont/core/property/SequenceNumber
-<http://sensorml.com/ont/core/property/SequenceNumber> rdf:type owl:NamedIndividual ,
-                                                                <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                       <http://www.w3.org/2004/02/skos/core#definition> """Integer number used to uniquely identify an object (often a digital object) in a sequence.
+###  http://sensorml.com/ont/swe/property/SequenceNumber
+:SequenceNumber rdf:type owl:NamedIndividual ,
+                         <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                <http://www.w3.org/2004/02/skos/core#definition> """Integer number used to uniquely identify an object (often a digital object) in a sequence.
 
 A sequence number is usually monotonically increasing but can sometime wrap around when reaching its maximum value (i.e. the maximum value allowed by the data type or representation).""" .
 
 
-###  http://sensorml.com/ont/core/property/SerialNumber
-<http://sensorml.com/ont/core/property/SerialNumber> rdf:type owl:NamedIndividual ,
-                                                              <http://sensorml.com/ont/core/property/Identifier> ;
-                                                     <http://www.w3.org/2004/02/skos/core#definition> "An unique alpha-numeric designation identifying a particular piece of equipment." .
+###  http://sensorml.com/ont/swe/property/SerialNumber
+:SerialNumber rdf:type owl:NamedIndividual ,
+                       :Identifier ;
+              <http://www.w3.org/2004/02/skos/core#definition> "An unique alpha-numeric designation identifying a particular piece of equipment." .
 
 
-###  http://sensorml.com/ont/core/property/ShortName
-<http://sensorml.com/ont/core/property/ShortName> rdf:type owl:NamedIndividual ,
-                                                           <http://sensorml.com/ont/core/property/Identifier> ;
-                                                  <http://www.w3.org/2004/02/skos/core#definition> "The short human-readable name of the system or object (usually less than 30 characters)." .
+###  http://sensorml.com/ont/swe/property/ShortName
+:ShortName rdf:type owl:NamedIndividual ,
+                    :Identifier ;
+           <http://www.w3.org/2004/02/skos/core#definition> "The short human-readable name of the system or object (usually less than 30 characters)." .
 
 
-###  http://sensorml.com/ont/core/property/SoftwareVersion
-<http://sensorml.com/ont/core/property/SoftwareVersion> rdf:type owl:NamedIndividual ,
-                                                                 <http://sensorml.com/ont/core/property/Identifier> ;
-                                                        rdfs:seeAlso "https://en.wikipedia.org/wiki/Software_versioning" ;
-                                                        <http://www.w3.org/2004/02/skos/core#definition> "Unique name or number assigned to identify a given state of development of a piece of computer software." .
+###  http://sensorml.com/ont/swe/property/SoftwareVersion
+:SoftwareVersion rdf:type owl:NamedIndividual ,
+                          :Identifier ;
+                 rdfs:seeAlso "https://en.wikipedia.org/wiki/Software_versioning" ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Unique name or number assigned to identify a given state of development of a piece of computer software." .
 
 
-###  http://sensorml.com/ont/core/property/SortedHistogram
-<http://sensorml.com/ont/core/property/SortedHistogram> rdf:type owl:NamedIndividual ,
-                                                                 <http://sensorml.com/ont/core/property/DataStructure> ;
-                                                        <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/Histogram> ;
-                                                        <http://www.w3.org/2004/02/skos/core#definition> "A histogram where the bins are ordered from highest to lowest frequency." .
+###  http://sensorml.com/ont/swe/property/SortedHistogram
+:SortedHistogram rdf:type owl:NamedIndividual ,
+                          :DataStructure ;
+                 <http://www.w3.org/2004/02/skos/core#broader> :Histogram ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "A histogram where the bins are ordered from highest to lowest frequency." .
 
 
-###  http://sensorml.com/ont/core/property/SpectralDensity
-<http://sensorml.com/ont/core/property/SpectralDensity> rdf:type owl:NamedIndividual ,
-                                                                 <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                        rdfs:seeAlso <https://en.wikipedia.org/wiki/Spectral_density> ;
-                                                        <http://www.w3.org/2004/02/skos/core#definition> """The Spectral Density of a signal is a way of describing its content in terms of its frequency (or wavelength) components. The term 'density' is used because the spectral values are normalized and expressed per unit frequency or wavelength. This normalization allows two spectral densities to be comparable even if the frequency resolutions used for the calculation differ.
+###  http://sensorml.com/ont/swe/property/SpectralDensity
+:SpectralDensity rdf:type owl:NamedIndividual ,
+                          <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                 rdfs:seeAlso <https://en.wikipedia.org/wiki/Spectral_density> ;
+                 <http://www.w3.org/2004/02/skos/core#definition> """The Spectral Density of a signal is a way of describing its content in terms of its frequency (or wavelength) components. The term 'density' is used because the spectral values are normalized and expressed per unit frequency or wavelength. This normalization allows two spectral densities to be comparable even if the frequency resolutions used for the calculation differ.
 
 The most commonly used form of Spectral Density is the Power Spectral Density (PSD).""" .
 
 
-###  http://sensorml.com/ont/core/property/SpectralIrradiance
-<http://sensorml.com/ont/core/property/SpectralIrradiance> rdf:type owl:NamedIndividual ,
-                                                                    <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                           rdfs:seeAlso <https://en.wikipedia.org/wiki/Irradiance> ;
-                                                           <http://www.w3.org/2004/02/skos/core#definition> "Spectral irradiance is the irradiance of a surface per unit frequency or wavelength, depending on whether the spectrum is taken as a function of frequency or of wavelength. The two forms have different dimensions: Spectral irradiance of a frequency spectrum is measured in watts per square metre per hertz (W⋅m−2⋅Hz−1), while spectral irradiance of a wavelength spectrum is measured in watts per square metre per metre (W⋅m−3), or more commonly watts per square metre per nanometre (W⋅m−2⋅nm−1)." ;
-                                                           <http://www.w3.org/2004/02/skos/core#related> <http://sensorml.com/ont/core/property/Irradiance> .
+###  http://sensorml.com/ont/swe/property/SpectralIrradiance
+:SpectralIrradiance rdf:type owl:NamedIndividual ,
+                             <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                    rdfs:seeAlso <https://en.wikipedia.org/wiki/Irradiance> ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Spectral irradiance is the irradiance of a surface per unit frequency or wavelength, depending on whether the spectrum is taken as a function of frequency or of wavelength. The two forms have different dimensions: Spectral irradiance of a frequency spectrum is measured in watts per square metre per hertz (W⋅m−2⋅Hz−1), while spectral irradiance of a wavelength spectrum is measured in watts per square metre per metre (W⋅m−3), or more commonly watts per square metre per nanometre (W⋅m−2⋅nm−1)." ;
+                    <http://www.w3.org/2004/02/skos/core#related> :Irradiance .
 
 
-###  http://sensorml.com/ont/core/property/SpectralRadiance
-<http://sensorml.com/ont/core/property/SpectralRadiance> rdf:type owl:NamedIndividual ,
-                                                                  <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                         rdfs:seeAlso <https://en.wikipedia.org/wiki/Radiance> ;
-                                                         <http://www.w3.org/2004/02/skos/core#definition> "Radiance of a surface per unit frequency or wavelength. The latter is commonly measured in W⋅sr−1⋅m−2⋅nm−1. This is a directional quantity." ;
-                                                         <http://www.w3.org/2004/02/skos/core#related> <http://qudt.org/vocab/quantitykind/Radiance> .
+###  http://sensorml.com/ont/swe/property/SpectralRadiance
+:SpectralRadiance rdf:type owl:NamedIndividual ,
+                           <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                  rdfs:seeAlso <https://en.wikipedia.org/wiki/Radiance> ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Radiance of a surface per unit frequency or wavelength. The latter is commonly measured in W⋅sr−1⋅m−2⋅nm−1. This is a directional quantity." ;
+                  <http://www.w3.org/2004/02/skos/core#related> <http://qudt.org/vocab/quantitykind/Radiance> .
 
 
-###  http://sensorml.com/ont/core/property/SpectralResponse
-<http://sensorml.com/ont/core/property/SpectralResponse> rdf:type owl:NamedIndividual ,
-                                                                  <http://sensorml.com/ont/core/property/ResponseCurve> ;
-                                                         rdfs:seeAlso "https://en.wikipedia.org/wiki/Frequency_response" ,
-                                                                      "https://en.wikipedia.org/wiki/Spectral_sensitivity" ;
-                                                         <http://www.w3.org/2004/02/skos/core#definition> """The spectral response or frequency response of a transducer provides its output level or sensitivity over its operating range in the frequency domain. 
+###  http://sensorml.com/ont/swe/property/SpectralResponse
+:SpectralResponse rdf:type owl:NamedIndividual ,
+                           :ResponseCurve ;
+                  rdfs:seeAlso "https://en.wikipedia.org/wiki/Frequency_response" ,
+                               "https://en.wikipedia.org/wiki/Spectral_sensitivity" ;
+                  <http://www.w3.org/2004/02/skos/core#definition> """The spectral response or frequency response of a transducer provides its output level or sensitivity over its operating range in the frequency domain. 
 
 A spectral response can be expressed in terms of the input signal's frequency, period or wavelength.""" .
 
 
-###  http://sensorml.com/ont/core/property/SpeedOverGround
-<http://sensorml.com/ont/core/property/SpeedOverGround> rdf:type owl:NamedIndividual ,
-                                                                 <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                        <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Speed> ;
-                                                        <http://www.w3.org/2004/02/skos/core#exactMatch> <http://sensorml.com/ont/core/property/GroundSpeed> .
+###  http://sensorml.com/ont/swe/property/SpeedOverGround
+:SpeedOverGround rdf:type owl:NamedIndividual ,
+                          <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                 <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Speed> ;
+                 <http://www.w3.org/2004/02/skos/core#exactMatch> :GroundSpeed .
 
 
-###  http://sensorml.com/ont/core/property/SpeedOverWater
-<http://sensorml.com/ont/core/property/SpeedOverWater> rdf:type owl:NamedIndividual ,
-                                                                <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                       <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Speed> ;
-                                                       <http://www.w3.org/2004/02/skos/core#definition> "Speed over Water (or Speed through Water (STW)) is the speed of a watercraft relative to the water mass it is traveling on." .
+###  http://sensorml.com/ont/swe/property/SpeedOverWater
+:SpeedOverWater rdf:type owl:NamedIndividual ,
+                         <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Speed> ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Speed over Water (or Speed through Water (STW)) is the speed of a watercraft relative to the water mass it is traveling on." .
 
 
-###  http://sensorml.com/ont/core/property/StandardError
-<http://sensorml.com/ont/core/property/StandardError> rdf:type owl:NamedIndividual ,
-                                                               <http://www.w3.org/ns/ssn/systems/Accuracy> .
+###  http://sensorml.com/ont/swe/property/StandardError
+:StandardError rdf:type owl:NamedIndividual ,
+                        <http://www.w3.org/ns/ssn/systems/Accuracy> .
 
 
-###  http://sensorml.com/ont/core/property/SubsystemID
-<http://sensorml.com/ont/core/property/SubsystemID> rdf:type owl:NamedIndividual ,
-                                                             <http://sensorml.com/ont/core/property/Identifier> ;
-                                                    rdfs:seeAlso <http://www.w3.org/ns/ssn/System> ;
-                                                    <http://www.w3.org/2004/02/skos/core#definition> "Short alpha-numerical ID used to identify a Component or Subsystem within the scope of its parent System (e.g. Sensor System, Sensor Array, Sensor Network, etc.). The uniqueness of such ID is only guaranteed within the scope of the parent System, and thus may be different from the globally unique ID of the subsystem." .
+###  http://sensorml.com/ont/swe/property/SubsystemID
+:SubsystemID rdf:type owl:NamedIndividual ,
+                      :Identifier ;
+             rdfs:seeAlso <http://www.w3.org/ns/ssn/System> ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Short alpha-numerical ID used to identify a Component or Subsystem within the scope of its parent System (e.g. Sensor System, Sensor Array, Sensor Network, etc.). The uniqueness of such ID is only guaranteed within the scope of the parent System, and thus may be different from the globally unique ID of the subsystem." .
 
 
-###  http://sensorml.com/ont/core/property/SystemStatus
-<http://sensorml.com/ont/core/property/SystemStatus> rdf:type owl:NamedIndividual ,
-                                                              <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
-                                                     <http://www.w3.org/2004/02/skos/core#definition> "Status of a system. This is often a status code taken from a list of predefined options, sometimes defined in a separate code space." .
+###  http://sensorml.com/ont/swe/property/SystemStatus
+:SystemStatus rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/ns/ssn/systems/SystemProperty> ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Status of a system. This is often a status code taken from a list of predefined options, sometimes defined in a separate code space." .
 
 
-###  http://sensorml.com/ont/core/property/SystemType
-<http://sensorml.com/ont/core/property/SystemType> rdf:type owl:NamedIndividual ,
-                                                            <http://sensorml.com/ont/core/property/Classifier> ;
-                                                   rdfs:seeAlso <http://sensorml.com/ont/system_types> ;
-                                                   <http://www.w3.org/2004/02/skos/core#definition> "Type of system, usually further qualified by an application specific code space." .
+###  http://sensorml.com/ont/swe/property/SystemType
+:SystemType rdf:type owl:NamedIndividual ,
+                     :Classifier ;
+            rdfs:seeAlso <http://sensorml.com/ont/system_types> ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Type of system, usually further qualified by an application specific code space." .
 
 
-###  http://sensorml.com/ont/core/property/SystemUID
-<http://sensorml.com/ont/core/property/SystemUID> rdf:type owl:NamedIndividual ,
-                                                           <http://sensorml.com/ont/core/property/Identifier> ;
-                                                  rdfs:seeAlso <http://www.w3.org/ns/ssn/System> ;
-                                                  <http://www.w3.org/2004/02/skos/core#definition> "Globally unique ID of a System, generally in the form of a URI or plain UUID." .
+###  http://sensorml.com/ont/swe/property/SystemUID
+:SystemUID rdf:type owl:NamedIndividual ,
+                    :Identifier ;
+           rdfs:seeAlso <http://www.w3.org/ns/ssn/System> ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Globally unique ID of a System, generally in the form of a URI or plain UUID." .
 
 
-###  http://sensorml.com/ont/core/property/TargetType
-<http://sensorml.com/ont/core/property/TargetType> rdf:type owl:NamedIndividual ,
-                                                            <http://sensorml.com/ont/core/property/Classifier> ;
-                                                   <http://www.w3.org/2004/02/skos/core#definition> """Type of target entity, usually further qualified by an application specific codespace.
+###  http://sensorml.com/ont/swe/property/TargetLocation
+:TargetLocation rdf:type owl:NamedIndividual ;
+                rdfs:seeAlso :TargetType ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Location of a target entity in space (see TargetType)." .
+
+
+###  http://sensorml.com/ont/swe/property/TargetType
+:TargetType rdf:type owl:NamedIndividual ,
+                     :Classifier ;
+            <http://www.w3.org/2004/02/skos/core#definition> """Type of target entity, usually further qualified by an application specific codespace.
 
 For a sensor, a target is an entity that is being searched, detected or tracked. It can then become the feature of interest of additional observations.
 
 For an actuator, a target is an entity that is being designated or physically interacted with.""" .
 
 
-###  http://sensorml.com/ont/core/property/TiltAngle
-<http://sensorml.com/ont/core/property/TiltAngle> rdf:type owl:NamedIndividual ,
-                                                           <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                  rdfs:seeAlso "https://en.wikipedia.org/wiki/Pan-tilt-zoom_camera" ;
-                                                  <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
-                                                  <http://www.w3.org/2004/02/skos/core#definition> """The tilt angle quantifies the amount or rotation of a video or still camera about the camera horizontal axis, corresponding to an up/down camera motion. It is the angle between the direction that the camera optical axis is pointing at and a reference plane that is orthogonal to the camera reference vertical axis (this reference plane is usually the local horizontal place when the PTZ camera is mounted level).
+###  http://sensorml.com/ont/swe/property/TiltAngle
+:TiltAngle rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/ns/sosa/ObservableProperty> ;
+           rdfs:seeAlso "https://en.wikipedia.org/wiki/Pan-tilt-zoom_camera" ;
+           <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+           <http://www.w3.org/2004/02/skos/core#definition> """The tilt angle quantifies the amount or rotation of a video or still camera about the camera horizontal axis, corresponding to an up/down camera motion. It is the angle between the direction that the camera optical axis is pointing at and a reference plane that is orthogonal to the camera reference vertical axis (this reference plane is usually the local horizontal place when the PTZ camera is mounted level).
 
 In the resulting image, a tilting motion makes the view seemingly translate along the image vertical axis.""" .
 
 
-###  http://sensorml.com/ont/core/property/TimeSeries
-<http://sensorml.com/ont/core/property/TimeSeries> rdf:type owl:NamedIndividual ,
-                                                            <http://sensorml.com/ont/core/property/DataStructure> ;
-                                                   <http://www.w3.org/2004/02/skos/core#definition> "A time series is a series of data points listed in time order. Thus it is a sequence of discrete time-stamped events or data." .
+###  http://sensorml.com/ont/swe/property/TimeSeries
+:TimeSeries rdf:type owl:NamedIndividual ,
+                     :DataStructure ;
+            <http://www.w3.org/2004/02/skos/core#definition> "A time series is a series of data points listed in time order. Thus it is a sequence of discrete time-stamped events or data." .
 
 
-###  http://sensorml.com/ont/core/property/Trajectory
-<http://sensorml.com/ont/core/property/Trajectory> rdf:type owl:NamedIndividual ,
-                                                            <http://sensorml.com/ont/core/property/DataStructure> ;
-                                                   <http://www.w3.org/2004/02/skos/core#broader> <http://sensorml.com/ont/core/property/TimeSeries> ;
-                                                   <http://www.w3.org/2004/02/skos/core#definition> "A trajectory is the path that an object follows through space as a function of time. When measured by a position sensor such as GPS, it is usually represented as a time series of location/position coordinate tuples." .
+###  http://sensorml.com/ont/swe/property/Trajectory
+:Trajectory rdf:type owl:NamedIndividual ,
+                     :DataStructure ;
+            <http://www.w3.org/2004/02/skos/core#broader> :TimeSeries ;
+            <http://www.w3.org/2004/02/skos/core#definition> "A trajectory is the path that an object follows through space as a function of time. When measured by a position sensor such as GPS, it is usually represented as a time series of location/position coordinate tuples." .
 
 
-###  http://sensorml.com/ont/core/property/TransmitterID
-<http://sensorml.com/ont/core/property/TransmitterID> rdf:type owl:NamedIndividual ,
-                                                               <http://sensorml.com/ont/core/property/Identifier> ;
-                                                      rdfs:seeAlso <https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity> ;
-                                                      <http://www.w3.org/2004/02/skos/core#definition> """The unique identifier of the transmitter used to exchange data with a System.
+###  http://sensorml.com/ont/swe/property/TransmitterID
+:TransmitterID rdf:type owl:NamedIndividual ,
+                        :Identifier ;
+               rdfs:seeAlso <https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity> ;
+               <http://www.w3.org/2004/02/skos/core#definition> """The unique identifier of the transmitter used to exchange data with a System.
 
 It can be further qualified with a codespace such as the International Mobile Equipment Identity (IMEI).""" .
 
 
-###  http://sensorml.com/ont/core/property/TrueAirSpeed
-<http://sensorml.com/ont/core/property/TrueAirSpeed> rdf:type owl:NamedIndividual ,
-                                                              <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                     rdfs:seeAlso <https://en.wikipedia.org/wiki/True_airspeed> ;
-                                                     <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Speed> ;
-                                                     <http://www.w3.org/2004/02/skos/core#definition> "Speed of an aircraft relative to the airmass in which it is flying." .
+###  http://sensorml.com/ont/swe/property/TrueAirSpeed
+:TrueAirSpeed rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/ns/sosa/ObservableProperty> ;
+              rdfs:seeAlso <https://en.wikipedia.org/wiki/True_airspeed> ;
+              <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Speed> ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Speed of an aircraft relative to the airmass in which it is flying." .
 
 
-###  http://sensorml.com/ont/core/property/TrueBearing
-<http://sensorml.com/ont/core/property/TrueBearing> rdf:type owl:NamedIndividual ,
-                                                             <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                    rdfs:seeAlso <https://en.wikipedia.org/wiki/Bearing_(navigation)> ;
-                                                    <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
-                                                    <http://www.w3.org/2004/02/skos/core#definition> "True bearing is the horizontal angle between the direction towards an object from the point of view of an observer and the direction of true north." .
+###  http://sensorml.com/ont/swe/property/TrueBearing
+:TrueBearing rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/ns/sosa/ObservableProperty> ;
+             rdfs:seeAlso <https://en.wikipedia.org/wiki/Bearing_(navigation)> ;
+             <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+             <http://www.w3.org/2004/02/skos/core#definition> "True bearing is the horizontal angle between the direction towards an object from the point of view of an observer and the direction of true north." .
 
 
-###  http://sensorml.com/ont/core/property/TrueHeading
-<http://sensorml.com/ont/core/property/TrueHeading> rdf:type owl:NamedIndividual ,
-                                                             <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Course_(navigation)" ;
-                                                    <http://www.w3.org/2004/02/skos/core#broader> <http://dbpedia.org/resource/Heading_(navigation)> ,
-                                                                                                  <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
-                                                    <http://www.w3.org/2004/02/skos/core#definition> "Angle formed between an object's or vehicle's heading direction and the direction of true north (i.e. the geographic north pole)." .
+###  http://sensorml.com/ont/swe/property/TrueHeading
+:TrueHeading rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/ns/sosa/ObservableProperty> ;
+             rdfs:seeAlso "https://en.wikipedia.org/wiki/Course_(navigation)" ;
+             <http://www.w3.org/2004/02/skos/core#broader> <http://dbpedia.org/resource/Heading_(navigation)> ,
+                                                           <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Angle formed between an object's or vehicle's heading direction and the direction of true north (i.e. the geographic north pole)." .
 
 
-###  http://sensorml.com/ont/core/property/VideoFrame
-<http://sensorml.com/ont/core/property/VideoFrame> rdf:type owl:NamedIndividual ,
-                                                            <http://sensorml.com/ont/core/property/DataStructure> ;
-                                                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Inter_frame" ,
-                                                                "https://en.wikipedia.org/wiki/Key_frame" ;
-                                                   <http://www.w3.org/2004/02/skos/core#definition> "A video frame contains data for a single frame of a video stream, including both the image data and a sequence number or timestamp. A video frame can contain data for a key frame or an inter-frame." .
+###  http://sensorml.com/ont/swe/property/VideoFrame
+:VideoFrame rdf:type owl:NamedIndividual ,
+                     :DataStructure ;
+            rdfs:seeAlso "https://en.wikipedia.org/wiki/Inter_frame" ,
+                         "https://en.wikipedia.org/wiki/Key_frame" ;
+            <http://www.w3.org/2004/02/skos/core#definition> "A video frame contains data for a single frame of a video stream, including both the image data and a sequence number or timestamp. A video frame can contain data for a key frame or an inter-frame." .
 
 
-###  http://sensorml.com/ont/core/property/Width
-<http://sensorml.com/ont/core/property/Width> rdf:type owl:NamedIndividual ,
-                                                       <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                              <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Length> ;
-                                              <http://www.w3.org/2004/02/skos/core#definition> "Width is a measure of the size of an object, taken side to side at a right angle from the length." .
+###  http://sensorml.com/ont/swe/property/Width
+:Width rdf:type owl:NamedIndividual ,
+                <http://www.w3.org/ns/sosa/ObservableProperty> ;
+       <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Length> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Width is a measure of the size of an object, taken side to side at a right angle from the length." .
 
 
-###  http://sensorml.com/ont/core/property/YawAngle
-<http://sensorml.com/ont/core/property/YawAngle> rdf:type owl:NamedIndividual ,
-                                                          <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                 rdfs:seeAlso "https://en.wikipedia.org/wiki/Aircraft_principal_axes" ,
-                                                              "https://en.wikipedia.org/wiki/Ship_motions#Rotational_motions" ;
-                                                 <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
-                                                 <http://www.w3.org/2004/02/skos/core#definition> "The yaw angle is one of the Tait-Bryan angles (Euler angles). It is the angle between an object's or vehicle's heading and a reference heading (often true or magnetic north), corresponding to a rotation about the local vertical axis." .
+###  http://sensorml.com/ont/swe/property/YawAngle
+:YawAngle rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/ns/sosa/ObservableProperty> ;
+          rdfs:seeAlso "https://en.wikipedia.org/wiki/Aircraft_principal_axes" ,
+                       "https://en.wikipedia.org/wiki/Ship_motions#Rotational_motions" ;
+          <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
+          <http://www.w3.org/2004/02/skos/core#definition> "The yaw angle is one of the Tait-Bryan angles (Euler angles). It is the angle between an object's or vehicle's heading and a reference heading (often true or magnetic north), corresponding to a rotation about the local vertical axis." .
 
 
-###  http://sensorml.com/ont/core/property/ZoomFactor
-<http://sensorml.com/ont/core/property/ZoomFactor> rdf:type owl:NamedIndividual ,
-                                                            <http://www.w3.org/ns/sosa/ObservableProperty> ;
-                                                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Pan-tilt-zoom_camera" ;
-                                                   <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-                                                   <http://www.w3.org/2004/02/skos/core#definition> "The zoom factor is a numerical quantity describing the amount of zoom applied by a camera relatively to the maximum zoom position." .
+###  http://sensorml.com/ont/swe/property/ZoomFactor
+:ZoomFactor rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/ns/sosa/ObservableProperty> ;
+            rdfs:seeAlso "https://en.wikipedia.org/wiki/Pan-tilt-zoom_camera" ;
+            <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+            <http://www.w3.org/2004/02/skos/core#definition> "The zoom factor is a numerical quantity describing the amount of zoom applied by a camera relatively to the maximum zoom position." .
 
 
 ###  http://www.opengis.net/def/property/OGC/0/ArraySize
 <http://www.opengis.net/def/property/OGC/0/ArraySize> rdf:type owl:NamedIndividual ,
-                                                               <http://sensorml.com/ont/core/property/DataProperty> ;
+                                                               :DataProperty ;
                                                       <http://www.w3.org/2004/02/skos/core#definition> "Size of one of the dimensions of a mono or multidimensional array." .
 
 
@@ -932,7 +961,7 @@ It can be further qualified with a codespace such as the International Mobile Eq
 
 ###  http://www.opengis.net/def/property/OGC/0/NumberOfPoints
 <http://www.opengis.net/def/property/OGC/0/NumberOfPoints> rdf:type owl:NamedIndividual ,
-                                                                    <http://sensorml.com/ont/core/property/DataProperty> ;
+                                                                    :DataProperty ;
                                                            rdfs:label "Number of Points" ;
                                                            <http://www.w3.org/2004/02/skos/core#broader> <http://www.opengis.net/def/property/OGC/0/ArraySize> ;
                                                            <http://www.w3.org/2004/02/skos/core#definition> "Number of points or vertices in a geometry (such as a trajectory)." .
@@ -940,7 +969,7 @@ It can be further qualified with a codespace such as the International Mobile Eq
 
 ###  http://www.opengis.net/def/property/OGC/0/NumberOfRows
 <http://www.opengis.net/def/property/OGC/0/NumberOfRows> rdf:type owl:NamedIndividual ,
-                                                                  <http://sensorml.com/ont/core/property/DataProperty> ;
+                                                                  :DataProperty ;
                                                          rdfs:label "Number of Rows" ;
                                                          <http://www.w3.org/2004/02/skos/core#broader> <http://www.opengis.net/def/property/OGC/0/ArraySize> ;
                                                          <http://www.w3.org/2004/02/skos/core#definition> "Number of rows in a 2D raster dataset (such as imagery)." .
@@ -948,7 +977,7 @@ It can be further qualified with a codespace such as the International Mobile Eq
 
 ###  http://www.opengis.net/def/property/OGC/0/NumberOfSamples
 <http://www.opengis.net/def/property/OGC/0/NumberOfSamples> rdf:type owl:NamedIndividual ,
-                                                                     <http://sensorml.com/ont/core/property/DataProperty> ;
+                                                                     :DataProperty ;
                                                             rdfs:label "Number of Samples" ;
                                                             <http://www.w3.org/2004/02/skos/core#broader> <http://www.opengis.net/def/property/OGC/0/ArraySize> ;
                                                             <http://www.w3.org/2004/02/skos/core#definition> "Number of samples along one of the dimensions of an N-D coverage dataset." .
@@ -978,7 +1007,7 @@ It can be further qualified with a codespace such as the International Mobile Eq
 
 ###  http://www.opengis.net/def/property/OGC/0/RunTime
 <http://www.opengis.net/def/property/OGC/0/RunTime> rdf:type owl:NamedIndividual ,
-                                                             <http://sensorml.com/ont/core/property/DataProperty> ;
+                                                             :DataProperty ;
                                                     <http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Time> ,
                                                                                                   <http://www.w3.org/ns/sosa/resultTime> ;
                                                     <http://www.w3.org/2004/02/skos/core#definition> "Time recorded at the begining of the execution of a model or algorithm whose results are simulated property values." .
